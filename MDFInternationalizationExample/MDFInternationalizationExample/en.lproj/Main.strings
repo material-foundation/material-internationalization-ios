@@ -1,0 +1,38 @@
+/* Class = "UILabel"; text = "Attributions"; ObjectID = "mgn-k3-F8V"; */
+"mgn-k3-F8V.text" = "Attributions"
+
+/* Class = "UILabel"; text = "Flag images generated from SVG files available on wikipedia.org."; ObjectID = "1en-8q-12w"; */
+"1en-8q-12w.text" = "Flag images generated from SVG files available on wikipedia.org.";
+
+/* Class = "UIButton"; title = "en.wikipedia.org/wiki/Flag"; ObjectID = "ZNn-wx-pVo"; */
+"ZNn-wx-pVo.normalTitle" = "wikipedia.org";
+
+/* Class = "UILabel"; text = "Image Grid"; ObjectID = "XZB-gP-iGc"; */
+"XZB-gP-iGc.text" = "Image Grid";
+
+/* Class = "UILabel"; text = "Device Information"; ObjectID = "YG5-ap-qm5"; */
+"YG5-ap-qm5.text" = "Device Information";
+
+/* Class = "UITabBarItem"; title = "Flags"; ObjectID = "Gq3-Hs-m0C"; */
+"Gq3-Hs-m0C.title" = "Flags";
+
+/* Class = "UILabel"; text = "Country Name"; ObjectID = "Jbo-SH-SeQ"; */
+"Jbo-SH-SeQ.text" = "Country Name";
+
+/* Class = "UITableViewController"; title = "Flags"; ObjectID = "M9q-Kw-lR5"; */
+"M9q-Kw-lR5.title" = "Flags";
+
+/* Class = "UILabel"; text = "OS Version"; ObjectID = "PgA-Ot-YFF"; */
+"PgA-Ot-YFF.text" = "OS Version";
+
+/* Class = "UILabel"; text = "Locale"; ObjectID = "Smi-n9-SyQ"; */
+"Smi-n9-SyQ.text" = "Locale";
+
+/* Class = "UILabel"; text = "Device"; ObjectID = "mzM-ln-glZ"; */
+"mzM-ln-glZ.text" = "Device";
+
+/* Class = "UITabBarItem"; title = "Info"; ObjectID = "rz9-iM-jLd"; */
+"rz9-iM-jLd.title" = "Info";
+
+/* Class = "UILabel"; text = "LTR | RTL"; ObjectID = "spj-nM-7Zl"; */
+"spj-nM-7Zl.text" = "LTR | RTL";

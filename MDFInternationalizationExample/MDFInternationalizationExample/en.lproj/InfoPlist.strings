@@ -1,0 +1,9 @@
+/*
+ InfoPlist.strings
+ MDFInternationalizationExample
+
+ Created by Ian Gordon on 9/29/16.
+ Copyright © 2016 Google. All rights reserved.
+ */
+
+"CFBundleDisplayName" = "Flags";

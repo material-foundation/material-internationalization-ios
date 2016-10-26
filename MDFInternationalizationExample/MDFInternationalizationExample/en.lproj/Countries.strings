@@ -1,0 +1,26 @@
+/* 
+  Countries.strings
+  MDFInternationalizationExample
+
+  Created by Ian Gordon on 9/8/16.
+  Copyright © 2016 Google. All rights reserved.
+*/
+
+"ARG" = "Argentina";
+"AUS" = "Australia";
+"BTN" = "Bhutan";
+"CAN" = "Canada";
+"FRA" = "France";
+"GRC" = "Greece";
+"IND" = "India";
+"JAM" = "Jamaica";
+"JPN" = "Japan";
+"MEX" = "Mexico";
+"NPL" = "Nepal";
+"PNG" = "Papua New Guinea";
+"QAT" = "Qatar";
+"SVK" = "Slovakia";
+"TUN" = "Tunisia";
+"USA" = "United States of America";
+"ZAF" = "South Africa";
+"ZMB" = "Zambia";
