@@ -20,7 +20,7 @@
  Leading autoresizing mask based on layoutDirection. 'Leading' is 'Left' in
  UIUserInterfaceLayoutDirectionLeftToRight, 'Right' otherwise.
 
- @param layoutDirection The layout direction to consider to compute the autoresizing mask.
+ @param layoutDirection The layout direction to consider when computing the autoresizing mask.
  @return The leading margin part of an autoresizing mask.
  */
 UIViewAutoresizing MDFLeadingMarginAutoresizingMaskForLayoutDirection(
@@ -73,16 +73,16 @@ UIViewAutoresizing MDFLeadingMarginAutoresizingMaskForLayoutDirection(
 
  @param frame The frame to convert.
  @param containerWidth The superview's bounds's width.
- @return The frame mirrored around the vertical axis
+ @return The frame mirrored around the vertical axis.
  */
 CGRect MDFRectFlippedHorizontally(CGRect frame, CGFloat containerWidth);
 
 
 /**
- Creates an UIEdgeInsets instance with it's left and right values exchanged.
+ Creates a UIEdgeInsets instance with its left and right values exchanged.
 
- @param Insets the insets we are intending to flip horizontally.
- @return Insets with the right and left values exchagned.
+ @param insets The insets we are intending to flip horizontally.
+ @return Insets with the right and left values exchanged.
  */
 UIEdgeInsets MDFInsetsFlippedHorizontally(UIEdgeInsets insets);
 
