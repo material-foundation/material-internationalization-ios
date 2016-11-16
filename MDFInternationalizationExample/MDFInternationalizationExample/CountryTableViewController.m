@@ -108,8 +108,6 @@
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer
     willSpeakRangeOfSpeechString:(NSRange)characterRange
                        utterance:(AVSpeechUtterance *)utterance {
-  NSLog(@"********** speechSynth:willSpeakRangeOfSpeechString:");
-
   NSIndexPath *indexPath = [_speakingCellIndexes firstObject];
   if (indexPath && [self.tableView.indexPathsForVisibleRows containsObject:indexPath]) {
     CountryCell *cell =
@@ -125,8 +123,6 @@
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer
     didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
-  NSLog(@"********** speechSynth:didFinishSpeechUtterance:");
-
   NSIndexPath *indexPath = [_speakingCellIndexes firstObject];
   if (indexPath) {
     [_speakingCellIndexes removeObjectAtIndex:0];
@@ -143,12 +139,6 @@
       [self.tableView endUpdates];
     }
   }
-}
-
-//KM
-- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer
-    didPauseSpeechUtterance:(AVSpeechUtterance *)utterance {
-  NSLog(@"********** speechSynth:didPauseSpeechUtterance:");
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer

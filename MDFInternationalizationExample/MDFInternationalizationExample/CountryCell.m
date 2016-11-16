@@ -50,8 +50,6 @@ static UIImage *sNonspeakingIcon;
       sNonspeakingIcon = [sNonspeakingIcon mdf_imageWithHorizontallyFlippedOrientation];
     }
   });
-  
-  NSLog(@"AwakeFromNib");
 }
 
 - (void)layoutSubviews {
