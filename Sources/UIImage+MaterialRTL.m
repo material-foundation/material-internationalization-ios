@@ -97,14 +97,17 @@ static UIImage *MDFRTLFlippedImage(UIImage *image) {
   }
 
   // If the UIImage is not backed by a CGImage, create one from the CIImage
-  CGImageRef coreGraphicsImage = image.CGImage;
-  if (coreGraphicsImage == nil) {
-    CIContext *context = [CIContext context];
-    coreGraphicsImage = [context createCGImage:image.CIImage fromRect:image.CIImage.extent];
-  }
-
-  if (coreGraphicsImage != nil) {
-    CGContextDrawImage(context, rect, coreGraphicsImage);
+  if (image.CGImage != NULL) {
+    CGContextDrawImage(context, rect, image.CGImage);
+  } else if (image.CIImage != nil) {
+    CIImage *coreImage = image.CIImage;
+    CIContext *coreImageContext = [CIContext context];
+    CGImageRef coreGraphicsImage =
+        [coreImageContext createCGImage:coreImage fromRect:coreImage.extent];
+    if (coreGraphicsImage != NULL) {
+      CGContextDrawImage(context, rect, coreGraphicsImage);
+      CFRelease(coreGraphicsImage);
+    }
   } else {
     NSCAssert(NO, @"Unable to flip image without a CGImage or CIImage backing store");
   }

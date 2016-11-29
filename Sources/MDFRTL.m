@@ -16,21 +16,7 @@
 
 #import "MDFRTL.h"
 
-static CGFloat MDFOriginForLeadingInset(CGFloat leadingInset,
-                                        CGFloat width,
-                                        CGFloat boundingWidth,
-                                        UIUserInterfaceLayoutDirection layoutDirection) {
-  switch (layoutDirection) {
-    case UIUserInterfaceLayoutDirectionLeftToRight:
-      return leadingInset;
-    case UIUserInterfaceLayoutDirectionRightToLeft:
-      return boundingWidth - leadingInset - width;
-  }
-  NSCAssert(NO, @"Invalid enumeration value %i.", (int)layoutDirection);
-  return leadingInset;
-}
-
-UIViewAutoresizing MDFAutoresizingFlexibleLeadingMargin(
+UIViewAutoresizing MDFLeadingMarginAutoresizingMaskForLayoutDirection(
     UIUserInterfaceLayoutDirection layoutDirection) {
   switch (layoutDirection) {
     case UIUserInterfaceLayoutDirectionLeftToRight:
@@ -42,7 +28,7 @@ UIViewAutoresizing MDFAutoresizingFlexibleLeadingMargin(
   return UIViewAutoresizingFlexibleLeftMargin;
 }
 
-UIViewAutoresizing MDFAutoresizingFlexibleTrailingMargin(
+UIViewAutoresizing MDFTrailingMarginAutoresizingMaskForLayoutDirection(
     UIUserInterfaceLayoutDirection layoutDirection) {
   switch (layoutDirection) {
     case UIUserInterfaceLayoutDirectionLeftToRight:
@@ -52,17 +38,6 @@ UIViewAutoresizing MDFAutoresizingFlexibleTrailingMargin(
   }
   NSCAssert(NO, @"Invalid enumeration value %i.", (int)layoutDirection);
   return UIViewAutoresizingFlexibleRightMargin;
-}
-
-CGRect MDFRectFlippedForRTL(CGRect leftToRightRect,
-                            CGFloat boundingWidth,
-                            UIUserInterfaceLayoutDirection layoutDirection) {
-  CGRect flippedRect = CGRectStandardize(leftToRightRect);
-  flippedRect.origin.x =
-    MDFOriginForLeadingInset(CGRectGetMinX(leftToRightRect), CGRectGetWidth(leftToRightRect),
-                           boundingWidth, layoutDirection);
-
-  return flippedRect;
 }
 
 CGRect MDFRectFlippedHorizontally(CGRect frame, CGFloat containerWidth) {

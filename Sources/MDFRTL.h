@@ -33,7 +33,7 @@ UIViewAutoresizing MDFLeadingMarginAutoresizingMaskForLayoutDirection(
  @param layoutDirection The layout direction to consider to compute the autoresizing mask.
  @return The trailing margin part of an autoresizing mask.
  */
-UIViewAutoresizing MDFLeadingMarginAutoresizingMaskForLayoutDirection(
+UIViewAutoresizing MDFTrailingMarginAutoresizingMaskForLayoutDirection(
     UIUserInterfaceLayoutDirection layoutDirection);
 
 /**
