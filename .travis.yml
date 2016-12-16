@@ -4,3 +4,4 @@ xcode_workspace: MDFInternationalizationExample.xcworkspace
 xcode_scheme: MDFInternationalization
 sdk: iphonesimulator10.2
 destination: "OS=10.2,name=iPhone 5"
+script: xcodebuild -workspace MDFInternationalizationExample.xcworkspace -scheme MDFInternationalizationTests -sdk iphonesimulator10.2 -destination "OS=10.2,name=iPhone 5" testiangordon-macbookpro2:material-internationalization-ios
