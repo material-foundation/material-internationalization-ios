@@ -1,4 +1,6 @@
 language: objective-c
 osx_image: xcode8.2
 xcode_workspace: MDFInternationalizationExample.xcworkspace
-xcode_scheme: MDFInternationalizationTests
+xcode_scheme: MDFInternationalization
+sdk: iphonesimulator10.2
+destination: "OS=10.2,name=iPhone 5"
