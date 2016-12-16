@@ -109,13 +109,13 @@
 }
 
 - (void)testImageMirror {
-  UIImage *sourceImage = [RTLTests standardImage];
-  UIImage *flippedImage = [sourceImage mdf_imageWithHorizontallyFlippedOrientation];
-  UIImage *twiceFlippedImage = [flippedImage mdf_imageWithHorizontallyFlippedOrientation];
+//  UIImage *sourceImage = [RTLTests standardImage];
+//  UIImage *flippedImage = [sourceImage mdf_imageWithHorizontallyFlippedOrientation];
+//  UIImage *twiceFlippedImage = [flippedImage mdf_imageWithHorizontallyFlippedOrientation];
 
-  // TODO: Implement per-pixel comparison
-  // sourceImage != flippedImage
-  // sourceImage == twiceFlippedImage
+//TODO: Implement per-pixel comparison
+// sourceImage != flippedImage
+// sourceImage == twiceFlippedImage
 }
 
 // Pixel Image is a 1 x 1 red square
