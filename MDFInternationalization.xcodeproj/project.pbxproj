@@ -360,6 +360,38 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.MDFInternationalization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wbool-conversion",
+					"-Wconstant-conversion",
+					"-Wcast-align",
+					"-Wconversion",
+					"-Wdocumentation",
+					"-Wduplicate-method-match",
+					"-Wempty-body",
+					"-Wenum-conversion",
+					"-Werror",
+					"-Wextra",
+					"-Wimplicit-atomic-properties",
+					"-Wint-conversion",
+					"-Wmissing-declarations",
+					"-Wmissing-prototypes",
+					"-Wmismatched-return-types",
+					"-Wnewline-eof",
+					"-Woverlength-strings",
+					"-Wshadow",
+					"-Wshorten-64-to-32",
+					"-Wstrict-selector-match",
+					"-Wundeclared-selector",
+					"-Wuninitialized",
+					"-Wunreachable-code",
+					"-Wunused-function",
+					"-Wno-auto-import",
+					"-Wno-error=deprecated",
+					"-Wno-error=deprecated-implementations",
+					"-Wno-sign-conversion",
+					"-Wno-unused-parameter",
+				);
 			};
 			name = Debug;
 		};
@@ -378,6 +410,38 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.MDFInternationalization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wbool-conversion",
+					"-Wconstant-conversion",
+					"-Wcast-align",
+					"-Wconversion",
+					"-Wdocumentation",
+					"-Wduplicate-method-match",
+					"-Wempty-body",
+					"-Wenum-conversion",
+					"-Werror",
+					"-Wextra",
+					"-Wimplicit-atomic-properties",
+					"-Wint-conversion",
+					"-Wmissing-declarations",
+					"-Wmissing-prototypes",
+					"-Wmismatched-return-types",
+					"-Wnewline-eof",
+					"-Woverlength-strings",
+					"-Wshadow",
+					"-Wshorten-64-to-32",
+					"-Wstrict-selector-match",
+					"-Wundeclared-selector",
+					"-Wuninitialized",
+					"-Wunreachable-code",
+					"-Wunused-function",
+					"-Wno-auto-import",
+					"-Wno-error=deprecated",
+					"-Wno-error=deprecated-implementations",
+					"-Wno-sign-conversion",
+					"-Wno-unused-parameter",
+				);
 			};
 			name = Release;
 		};

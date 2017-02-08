@@ -107,6 +107,7 @@ static UIImage *MDFRTLFlippedImage(UIImage *image) {
     if (coreGraphicsImage != NULL) {
       CGContextDrawImage(context, rect, coreGraphicsImage);
       CFRelease(coreGraphicsImage);
+      coreGraphicsImage = NULL;
     }
   } else {
     NSCAssert(NO, @"Unable to flip image without a CGImage or CIImage backing store");
@@ -130,11 +131,11 @@ static UIImage *MDFRTLFlippedImage(UIImage *image) {
   } else {
     UIImage *mirroredImage;
     UIImageOrientation mirroredOrientation = MDFRTLMirroredOrientation(self.imageOrientation);
-    if (self.CGImage) {
+    if (self.CGImage != NULL) {
       mirroredImage = [[self class] imageWithCGImage:self.CGImage
                                                scale:self.scale
                                          orientation:mirroredOrientation];
-    } else if (self.CIImage) {
+    } else if (self.CIImage != nil) {
       mirroredImage = [[self class] imageWithCIImage:self.CIImage
                                                scale:self.scale
                                          orientation:mirroredOrientation];
