@@ -113,7 +113,7 @@
 //  UIImage *flippedImage = [sourceImage mdf_imageWithHorizontallyFlippedOrientation];
 //  UIImage *twiceFlippedImage = [flippedImage mdf_imageWithHorizontallyFlippedOrientation];
 
-//TODO: Implement per-pixel comparison
+//TODO(#6): Implement per-pixel comparison
 // sourceImage != flippedImage
 // sourceImage == twiceFlippedImage
 }
@@ -135,7 +135,7 @@
   return image;
 }
 
-// Standard Image is a 60 x 40 blue square with a green line from top left to bottom right
+// Standard Image is a blue rectangle with a green line from top left to bottom right
 + (UIImage *)standardImage {
   static UIImage *image;
   static dispatch_once_t onceToken;
