@@ -142,7 +142,7 @@ static UIImage *MDFRTLFlippedImage(UIImage *image) {
     }
 
     // If we were unsuccessful, manually flip the image using a Core Graphics context
-    if (mirroredImage == nil) {
+    if (!mirroredImage) {
       mirroredImage = MDFRTLFlippedImage(self);
     }
 
