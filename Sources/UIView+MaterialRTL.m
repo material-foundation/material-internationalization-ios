@@ -142,7 +142,7 @@ static inline UIUserInterfaceLayoutDirection
 - (UISemanticContentAttribute)mdf_associatedSemanticContentAttribute {
   NSNumber *semanticContentAttributeNumber =
       objc_getAssociatedObject(self, @selector(mdf_semanticContentAttribute));
-  if (semanticContentAttributeNumber) {
+  if (semanticContentAttributeNumber != nil) {
     return [semanticContentAttributeNumber integerValue];
   }
   return UISemanticContentAttributeUnspecified;
