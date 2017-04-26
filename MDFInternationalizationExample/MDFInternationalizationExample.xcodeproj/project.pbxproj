@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		402172611EB14C6500966498 /* MDFInternationalizationExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 402172601EB14C6500966498 /* MDFInternationalizationExampleUITests.m */; };
 		4031DDEA1D9AF66D00713D1B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4031DDE91D9AF66D00713D1B /* AVFoundation.framework */; };
 		4031DDEF1D9B175200713D1B /* MDFInternationalization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4031DDEE1D9B175200713D1B /* MDFInternationalization.framework */; };
 		4031DDF01D9B175200713D1B /* MDFInternationalization.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4031DDEE1D9B175200713D1B /* MDFInternationalization.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -23,6 +24,16 @@
 		40FE8A9B1D9AC719000A2A57 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE8A9A1D9AC719000A2A57 /* InformationViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		402172631EB14C6500966498 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4096E61E1D78ED7600389ECD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4096E6251D78ED7600389ECD;
+			remoteInfo = MDFInternationalizationExample;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		40FE8A9F1D9AD960000A2A57 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -38,6 +49,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4021725E1EB14C6500966498 /* MDFInternationalizationExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MDFInternationalizationExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		402172601EB14C6500966498 /* MDFInternationalizationExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDFInternationalizationExampleUITests.m; sourceTree = "<group>"; };
+		402172621EB14C6500966498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4031DDE91D9AF66D00713D1B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4031DDEE1D9B175200713D1B /* MDFInternationalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MDFInternationalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4039C3D41D9DAB1D0086557E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -65,6 +79,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4021725B1EB14C6500966498 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4096E6231D78ED7600389ECD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,10 +98,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4021725F1EB14C6500966498 /* MDFInternationalizationExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				402172601EB14C6500966498 /* MDFInternationalizationExampleUITests.m */,
+				402172621EB14C6500966498 /* Info.plist */,
+			);
+			path = MDFInternationalizationExampleUITests;
+			sourceTree = "<group>";
+		};
 		4096E61D1D78ED7600389ECD = {
 			isa = PBXGroup;
 			children = (
 				4096E6281D78ED7600389ECD /* MDFInternationalizationExample */,
+				4021725F1EB14C6500966498 /* MDFInternationalizationExampleUITests */,
 				4096E6271D78ED7600389ECD /* Products */,
 				40C6FB501D943FC900756FC7 /* Frameworks */,
 			);
@@ -90,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				4096E6261D78ED7600389ECD /* MDFInternationalizationExample.app */,
+				4021725E1EB14C6500966498 /* MDFInternationalizationExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +169,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4021725D1EB14C6500966498 /* MDFInternationalizationExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 402172671EB14C6500966498 /* Build configuration list for PBXNativeTarget "MDFInternationalizationExampleUITests" */;
+			buildPhases = (
+				4021725A1EB14C6500966498 /* Sources */,
+				4021725B1EB14C6500966498 /* Frameworks */,
+				4021725C1EB14C6500966498 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				402172641EB14C6500966498 /* PBXTargetDependency */,
+			);
+			name = MDFInternationalizationExampleUITests;
+			productName = MDFInternationalizationExampleUITests;
+			productReference = 4021725E1EB14C6500966498 /* MDFInternationalizationExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		4096E6251D78ED7600389ECD /* MDFInternationalizationExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4096E63D1D78ED7600389ECD /* Build configuration list for PBXNativeTarget "MDFInternationalizationExample" */;
@@ -164,6 +214,12 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Google;
 				TargetAttributes = {
+					4021725D1EB14C6500966498 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = EQHXZ8M8AV;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4096E6251D78ED7600389ECD;
+					};
 					4096E6251D78ED7600389ECD = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = EQHXZ8M8AV;
@@ -185,11 +241,19 @@
 			projectRoot = "";
 			targets = (
 				4096E6251D78ED7600389ECD /* MDFInternationalizationExample */,
+				4021725D1EB14C6500966498 /* MDFInternationalizationExampleUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4021725C1EB14C6500966498 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4096E6241D78ED7600389ECD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,6 +270,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4021725A1EB14C6500966498 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				402172611EB14C6500966498 /* MDFInternationalizationExampleUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4096E6221D78ED7600389ECD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +291,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		402172641EB14C6500966498 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4096E6251D78ED7600389ECD /* MDFInternationalizationExample */;
+			targetProxy = 402172631EB14C6500966498 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4096E6321D78ED7600389ECD /* Main.storyboard */ = {
@@ -261,6 +341,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		402172651EB14C6500966498 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				INFOPLIST_FILE = MDFInternationalizationExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.MDFInternationalizationExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MDFInternationalizationExample;
+			};
+			name = Debug;
+		};
+		402172661EB14C6500966498 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				INFOPLIST_FILE = MDFInternationalizationExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.MDFInternationalizationExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MDFInternationalizationExample;
+			};
+			name = Release;
+		};
 		4096E63B1D78ED7600389ECD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -382,6 +492,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		402172671EB14C6500966498 /* Build configuration list for PBXNativeTarget "MDFInternationalizationExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				402172651EB14C6500966498 /* Debug */,
+				402172661EB14C6500966498 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		4096E6211D78ED7600389ECD /* Build configuration list for PBXProject "MDFInternationalizationExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
