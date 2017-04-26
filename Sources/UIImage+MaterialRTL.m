@@ -97,14 +97,14 @@ static UIImage *MDFRTLFlippedImage(UIImage *image) {
   }
 
   // If the UIImage is not backed by a CGImage, create one from the CIImage
-  if (image.CGImage != NULL) {
+  if (image.CGImage) {
     CGContextDrawImage(context, rect, image.CGImage);
-  } else if (image.CIImage != nil) {
+  } else if (image.CIImage) {
     CIImage *coreImage = image.CIImage;
     CIContext *coreImageContext = [CIContext context];
     CGImageRef coreGraphicsImage =
         [coreImageContext createCGImage:coreImage fromRect:coreImage.extent];
-    if (coreGraphicsImage != NULL) {
+    if (coreGraphicsImage) {
       CGContextDrawImage(context, rect, coreGraphicsImage);
       CFRelease(coreGraphicsImage);
       coreGraphicsImage = NULL;
@@ -131,11 +131,11 @@ static UIImage *MDFRTLFlippedImage(UIImage *image) {
   } else {
     UIImage *mirroredImage;
     UIImageOrientation mirroredOrientation = MDFRTLMirroredOrientation(self.imageOrientation);
-    if (self.CGImage != NULL) {
+    if (self.CGImage) {
       mirroredImage = [[self class] imageWithCGImage:self.CGImage
                                                scale:self.scale
                                          orientation:mirroredOrientation];
-    } else if (self.CIImage != nil) {
+    } else if (self.CIImage) {
       mirroredImage = [[self class] imageWithCIImage:self.CIImage
                                                scale:self.scale
                                          orientation:mirroredOrientation];

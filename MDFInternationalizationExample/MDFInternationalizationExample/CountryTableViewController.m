@@ -109,7 +109,7 @@
     willSpeakRangeOfSpeechString:(NSRange)characterRange
                        utterance:(AVSpeechUtterance *)utterance {
   NSIndexPath *indexPath = [_speakingCellIndexes firstObject];
-  if (indexPath != nil && [self.tableView.indexPathsForVisibleRows containsObject:indexPath]) {
+  if (indexPath && [self.tableView.indexPathsForVisibleRows containsObject:indexPath]) {
     CountryCell *cell =
         (CountryCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
     cell.speakingName = YES;
@@ -124,7 +124,7 @@
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer
     didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
   NSIndexPath *indexPath = [_speakingCellIndexes firstObject];
-  if (indexPath != nil) {
+  if (indexPath) {
     [_speakingCellIndexes removeObjectAtIndex:0];
 
     // Set speech icon back to normal when the country's name is finished being spoken
@@ -146,7 +146,7 @@
   // If the version of iOS is too old (~8.1 or earlier), we may be unable to speak country names.
   // In that case, present an alert to the user.
   NSIndexPath *indexPath = [_speakingCellIndexes firstObject];
-  if (indexPath != nil) {
+  if (indexPath) {
     [_speakingCellIndexes removeObjectAtIndex:0];
   }
 

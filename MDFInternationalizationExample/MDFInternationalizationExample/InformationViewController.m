@@ -53,7 +53,7 @@ static NSString *sWikipediaURL = @"https://wikipedia.org";
   NSString *displayLocaleName =
       [[NSLocale currentLocale] displayNameForKey:NSLocaleIdentifier value:localeIdentifier];
   NSString *localeString;
-  if (displayLocaleName != nil) {
+  if (displayLocaleName) {
     localeString = [NSString stringWithFormat:@"%@ - %@", localeIdentifier, displayLocaleName];
   } else {
     localeString = localeIdentifier;
@@ -89,7 +89,7 @@ static NSString *sWikipediaURL = @"https://wikipedia.org";
 - (IBAction)navigateToWikipedia:(id)sender {
   if ([sender isKindOfClass:[UIButton class]]) {
     NSURL *wikipediaURL = [NSURL URLWithString:sWikipediaURL];
-    if (wikipediaURL != nil &&
+    if (wikipediaURL &&
         [[UIApplication sharedApplication] canOpenURL:wikipediaURL]) {
       [[UIApplication sharedApplication] openURL:wikipediaURL];
     }

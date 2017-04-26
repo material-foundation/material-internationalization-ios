@@ -29,7 +29,7 @@
   // Allow playback so country names can be spoken over the main speaker
   NSError *error;
   [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
-  if (error != nil) {
+  if (error) {
     NSLog(@"Error setting the category on AVAudioSession");
   }
 
