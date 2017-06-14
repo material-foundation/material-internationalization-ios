@@ -1,7 +1,7 @@
 language: objective-c
-osx_image: xcode8.2
+osx_image: xcode8.3
 xcode_workspace: MDFInternationalizationExample.xcworkspace
-xcode_scheme: MDFInternationalization
-sdk: iphonesimulator10.2
-destination: "OS=10.2,name=iPhone 5"
-script: xcodebuild -workspace MDFInternationalizationExample.xcworkspace -scheme MDFInternationalizationTests -sdk iphonesimulator10.2 -destination "OS=10.2,name=iPhone 5" testiangordon-macbookpro2:material-internationalization-ios
+xcode_scheme: MDFInternationalizationTests
+sdk: iphonesimulator10.3
+destination: "OS=10.3,name=iPhone 5"
+#script: xcodebuild test
