@@ -6,8 +6,8 @@ xcode_scheme: MDFInternationalizationTests
 xcode_sdk: iphonesimulator10.3
 env:
   matrix:
-    - destination: "iPhone 7 Plus (10.3.1)"
-    - destination: "iPhone 4s (8.1)"
+    - DESTINATION="platform=iOS Simulator,name=iPhone 7,OS=10.3.1"
+    - DESTINATION="platform=iOS Simulator,name=iPhone 4s,OS=8.1"
 script: 
   - set -o pipefail
 # List available destinatinos
@@ -20,4 +20,4 @@ script:
   - echo "Travis-Xcode-Destination $TRAVIS_XCODE_DESTINATION"
   - env
 #  - xcodebuild -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$XCODE_SDK" -destination "$XCODE_DESTINATION" test
-  - xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$XCODE_SDK" -destination "$XCODE_DESTINATION" test
+  - xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$XCODE_SDK" -destination "DESTINATION" test
