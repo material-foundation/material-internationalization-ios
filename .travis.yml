@@ -4,4 +4,4 @@ xcode_workspace: MDFInternationalizationExample.xcworkspace
 xcode_scheme: MDFInternationalizationTests
 sdk: iphonesimulator10.3
 destination: "OS=10.3,name=iPhone 5"
-#script: xcodebuild test
+script: xcodebuild test
