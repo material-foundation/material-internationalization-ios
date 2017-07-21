@@ -1,5 +1,7 @@
 MDFInternationalization assists in internationalizing your app or components.
 
+[![Build Status](https://travis-ci.org/material-foundation/material-internationalization-ios.svg?branch=develop)](https://travis-ci.org/material-foundation/material-internationalization-ios)
+
 ## Adding RTL calculations to CGRect and other CGGeometry structures.
 
 A view is conceptually positioned within its superview in terms of leading/trailing. When it's time
