@@ -1,6 +1,5 @@
 language: objective-c
 osx_image: xcode8.3
-#xcode_workspace: MDFInternationalizationExample.xcworkspace
 xcode_project: MDFInternationalization.xcodeproj
 xcode_scheme: MDFInternationalizationTests
 xcode_sdk: iphonesimulator10.3
@@ -10,4 +9,4 @@ env:
     - DESTINATION="platform=iOS Simulator,name=iPad Air 2,OS=9.2"
     - DESTINATION="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.3.1"
 script: 
-  - xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$TRAVIS_XCODE_SDK" -destination "$DESTINATION" test
+  - xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$TRAVIS_XCODE_SDK" -destination "$DESTINATION" test | xcpretty
