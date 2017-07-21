@@ -13,6 +13,7 @@ script:
 # List available destinatinos
   - instruments -s devices
 # Echo Environment
+  - echo "Travis-Xcode-SDK $TRAVIS_XCODE_SDK"
   - echo "Project $TRAVIS_XCODE_PROJECT"
   - echo "Scheme $TRAVIS_XCODE_SCHEME"
   - echo "Destination $DESTINATION"
@@ -20,4 +21,4 @@ script:
   - echo "Travis-Xcode-Destination $TRAVIS_XCODE_DESTINATION"
   - env
 #  - xcodebuild -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$XCODE_SDK" -destination "$XCODE_DESTINATION" test
-  - xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$XCODE_SDK" -destination "$DESTINATION" test
+  - xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$TRAVIS_XCODE_SDK" -destination "$DESTINATION" test
