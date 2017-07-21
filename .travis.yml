@@ -15,7 +15,7 @@ script:
 # Echo Environment
   - echo "Project $TRAVIS_XCODE_PROJECT"
   - echo "Scheme $TRAVIS_XCODE_SCHEME"
-  - echo "Destination $XCODE_DESTINATION"
+  - echo "Destination $DESTINATION"
   - echo "Xcode-Destination $XCODE_DESTINATION"
   - echo "Travis-Xcode-Destination $TRAVIS_XCODE_DESTINATION"
   - env
