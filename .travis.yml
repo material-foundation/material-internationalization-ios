@@ -16,6 +16,8 @@ script:
   - echo "Project $TRAVIS_XCODE_PROJECT"
   - echo "Scheme $TRAVIS_XCODE_SCHEME"
   - echo "Destination $XCODE_DESTINATION"
-  - echo "Travis-Destination $TRAVIS_XCODE_DESTINATION"
+  - echo "Xcode-Destination $XCODE_DESTINATION"
+  - echo "Travis-Xcode-Destination $TRAVIS_XCODE_DESTINATION"
+  - env
 #  - xcodebuild -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$XCODE_SDK" -destination "$XCODE_DESTINATION" test
   - xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$XCODE_SDK" -destination "$XCODE_DESTINATION" test
