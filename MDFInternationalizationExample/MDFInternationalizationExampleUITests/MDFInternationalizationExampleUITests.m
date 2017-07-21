@@ -51,7 +51,6 @@
   [tablesQuery.staticTexts[@"Mexico"] swipeUp];
   [tablesQuery.staticTexts[@"United States of America"] tap];
   [tablesQuery.staticTexts[@"Slovakia"] tap];
-
 }
 
 @end

@@ -27,7 +27,7 @@ static UIImage *sNonspeakingIcon;
 - (void)awakeFromNib {
   [super awakeFromNib];
 
-  // A flag imageview should not be mirrored so we force the view to Left to Right.
+  // A flag imageview should not be mirrored in Right-to-Left so we force the view to Left-to-Right.
   self.flagView.mdf_semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
 
   // The speech indicator icon can be mirrored, so we keep the default of

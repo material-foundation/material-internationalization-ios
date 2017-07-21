@@ -32,6 +32,16 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4096E5B81D78CB5500389ECD"
+               BuildableName = "MDFInternationalizationTests.xctest"
+               BlueprintName = "MDFInternationalizationTests"
+               ReferencedContainer = "container:../MDFInternationalization.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "4021725D1EB14C6500966498"
                BuildableName = "MDFInternationalizationExampleUITests.xctest"
                BlueprintName = "MDFInternationalizationExampleUITests"
