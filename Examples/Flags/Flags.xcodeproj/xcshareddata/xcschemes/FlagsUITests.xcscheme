@@ -10,6 +10,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -17,9 +18,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4021725D1EB14C6500966498"
-               BuildableName = "MDFInternationalizationExampleUITests.xctest"
-               BlueprintName = "MDFInternationalizationExampleUITests"
-               ReferencedContainer = "container:MDFInternationalizationExample.xcodeproj">
+               BuildableName = "FlagsUITests.xctest"
+               BlueprintName = "FlagsUITests"
+               ReferencedContainer = "container:Flags.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -27,9 +28,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4096E6251D78ED7600389ECD"
-            BuildableName = "MDFInternationalizationExample.app"
-            BlueprintName = "MDFInternationalizationExample"
-            ReferencedContainer = "container:MDFInternationalizationExample.xcodeproj">
+            BuildableName = "Flags.app"
+            BlueprintName = "Flags"
+            ReferencedContainer = "container:Flags.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -39,6 +40,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
