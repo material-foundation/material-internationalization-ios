@@ -1,4 +1,4 @@
-MDFInternationalization assists in internationalizing your app or components.
+MDFInternationalization assists in internationalizing your iOS app or components.
 
 [![GitHub release](https://img.shields.io/github/release/material-foundation/material-internationalization-ios.svg)](https://github.com/material-foundation/material-internationalization-ios/releases)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/material-foundation/material-internationalization-ios/blob/develop/LICENSE)
