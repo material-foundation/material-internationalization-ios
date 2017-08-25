@@ -24,7 +24,7 @@ A category on UIView backports iOS 9's `-[UIView semanticContentAttribute]` and 
 
 ## Usage
 
-See MDCInternationalizationExample for an example of how to use this functionality.
+See Examples/Flags for an example of how to use this functionality.
 
 ## License
 
