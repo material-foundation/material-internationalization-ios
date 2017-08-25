@@ -12,27 +12,27 @@ to actually lay out (i.e. setting frames), you position the frame as you usually
 are in the opposite layout direction you use this code to return a CGRect that has been flipped
 around its vertical axis.
 
+``` obj-c
+// To flip a subview's frame horizontally, pass in subview.frame and the width of its parent.
+CGRect flippedFrame = MDFRectFlippedHorizontally(originalFrame, CGRectGetWidth(self.bounds));
+```
+
 ## Mirroring Images
 
 A category on UIImage backports iOS 10's `[UIImage imageWithHorizontallyFlippedOrientation]` to
 earlier versions of iOS.
+
+``` obj-c
+// To mirror on image, invoke mdf_imageWithHorizontallyFlippedOrientation.
+UIImage *mirroredImage = [originalImage mdf_imageWithHorizontallyFlippedOrientation];
+```
 
 ## Adding semantic context
 
 A category on UIView backports iOS 9's `-[UIView semanticContentAttribute]` and iOS 10's
 `-[UIView effectiveUserInterfaceLayoutDirection]` to earlier versions of iOS.
 
-## Usage
-
-See Examples/Flags for a detailed example of how to use the functionality provided by this library.
-
 ``` obj-c
-// To flip a subview's frame horizontally, pass in subview.frame and the width of its parent.
-CGRect flippedFrame = MDFRectFlippedHorizontally(originalFrame, CGRectGetWidth(self.bounds));
-
-// To mirror on image, invoke mdf_imageWithHorizontallyFlippedOrientation.
-UIImage *mirroredImage = [originalImage mdf_imageWithHorizontallyFlippedOrientation];
-
 // To set a semantic content attribute, set the mdf_semanticContentAttribute property.
 lockedLTRView.mdf_semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
 
@@ -41,6 +41,11 @@ if ([customControl mdf_effectiveUserInterfaceLayoutDirection] == UIUserInterface
   // Update customControl's layout to be in RTL mode.
 }
 ```
+
+## Usage
+
+See Examples/Flags for a detailed example of how to use the functionality provided by this library.
+
 
 ## License
 
