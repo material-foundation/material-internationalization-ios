@@ -24,7 +24,23 @@ A category on UIView backports iOS 9's `-[UIView semanticContentAttribute]` and 
 
 ## Usage
 
-See Examples/Flags for an example of how to use this functionality.
+See Examples/Flags for a detailed example of how to use the functionality provided by this library.
+
+``` obj-c
+// To flip a subview's frame horizontally, pass in subview.frame and the width of its parent.
+CGRect flippedFrame = MDFRectFlippedHorizontally(originalFrame, CGRectGetWidth(self.bounds));
+
+// To mirror on image, invoke mdf_imageWithHorizontallyFlippedOrientation.
+UIImage *mirroredImage = [originalImage mdf_imageWithHorizontallyFlippedOrientation];
+
+// To set a semantic content attribute, set the mdf_semanticContentAttribute property.
+lockedLTRView.mdf_semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
+
+// mdf_semanticContentAttribute is used to calculate the mdf_effectiveUserInterfaceLayoutDirection
+if ([customControl mdf_effectiveUserInterfaceLayoutDirection] == UIUserInterfaceLayoutDirectionRightToLeft) {
+  // Update customControl's layout to be in RTL mode.
+}
+```
 
 ## License
 
