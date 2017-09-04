@@ -108,15 +108,16 @@
   XCTAssertTrue(flippedOriginalImage.renderingMode == UIImageRenderingModeAlwaysOriginal);
 }
 
-- (void)testImageMirror {
+//TODO(#6): Implement per-pixel comparison
+//- (void)testImageMirror {
 //  UIImage *sourceImage = [RTLTests standardImage];
 //  UIImage *flippedImage = [sourceImage mdf_imageWithHorizontallyFlippedOrientation];
 //  UIImage *twiceFlippedImage = [flippedImage mdf_imageWithHorizontallyFlippedOrientation];
 
-//TODO(#6): Implement per-pixel comparison
 // sourceImage != flippedImage
 // sourceImage == twiceFlippedImage
-}
+//}
+
 
 // Pixel Image is a 1 x 1 red square
 + (UIImage *)pixelImage {

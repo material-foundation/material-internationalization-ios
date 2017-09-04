@@ -1,5 +1,20 @@
 language: objective-c
 osx_image: xcode8.3
+sudo: false
+
+# Only do a shallow clone of our Git repo.
+# https://docs.travis-ci.com/user/customizing-the-build#Git-Clone-Depth
+git:
+  depth: 3
+
+# Only fire off builds for specific branches.
+branches:
+  only:
+    - develop
+    - stable
+    - /^feature-.*$/
+    - release-candidate
+      
 xcode_project: MDFInternationalization.xcodeproj
 xcode_scheme: MDFInternationalizationTests
 xcode_sdk: iphonesimulator10.3
@@ -8,5 +23,8 @@ env:
     - DESTINATION="platform=iOS Simulator,name=iPhone 4s,OS=8.3"
     - DESTINATION="platform=iOS Simulator,name=iPad Air 2,OS=9.2"
     - DESTINATION="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.3.1"
+
+# Test Execution
 script: 
   - xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$TRAVIS_XCODE_SDK" -destination "$DESTINATION" test | xcpretty
+
