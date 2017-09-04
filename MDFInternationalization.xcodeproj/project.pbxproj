@@ -43,6 +43,7 @@
 		4096E5DD1D78CBE700389ECD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		4096E5DE1D78CBE700389ECD /* MDFInternationalizationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDFInternationalizationTests.m; path = Tests/MDFInternationalizationTests.m; sourceTree = "<group>"; };
 		4096E5E51D78E02600389ECD /* MDFRTLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDFRTLTests.m; path = Tests/MDFRTLTests.m; sourceTree = "<group>"; };
+		40F838321F50D7A500DE0781 /* MDFInternationalization.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MDFInternationalization.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +70,7 @@
 			children = (
 				4096E5C91D78CBB900389ECD /* Sources */,
 				4096E5CA1D78CBC200389ECD /* Tests */,
+				40F838311F50D79300DE0781 /* Packaging */,
 				4096E5B01D78CB5500389ECD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +115,14 @@
 				4096E5CB1D78CBD400389ECD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40F838311F50D79300DE0781 /* Packaging */ = {
+			isa = PBXGroup;
+			children = (
+				40F838321F50D7A500DE0781 /* MDFInternationalization.podspec */,
+			);
+			name = Packaging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
