@@ -1,18 +1,18 @@
 //
-//  MDFInternationalizationExampleUITests.m
-//  MDFInternationalizationExampleUITests
+//  FlagsUITests.m
+//  FlagsUITests
 //
-//  Created by Ian Gordon on 4/26/17.
+//  Created by Ian Gordon on 9/4/17.
 //  Copyright © 2017 Google. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface MDFInternationalizationExampleUITests : XCTestCase
+@interface FlagsUITests : XCTestCase
 
 @end
 
-@implementation MDFInternationalizationExampleUITests
+@implementation FlagsUITests
 
 - (void)setUp {
     [super setUp];
@@ -32,7 +32,7 @@
     [super tearDown];
 }
 
-- (void)testBasic {
+- (void)testExample {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
