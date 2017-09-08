@@ -106,7 +106,10 @@ static inline UIUserInterfaceLayoutDirection
     NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
     // Can I use kAppBundleIdentifier ?
     if ([bundlePath hasSuffix:@".app"]) {
-      applicationLayoutDirection = [UIApplication sharedApplication].userInterfaceLayoutDirection;
+      // We can't call sharedApplication directly or an error gets thrown for app extensions.
+      UIApplication *application =
+          [[UIApplication class] performSelector:@selector(sharedApplication)];
+      applicationLayoutDirection = application.userInterfaceLayoutDirection;
     }
     return [self
         mdf_userInterfaceLayoutDirectionForSemanticContentAttribute:attribute
