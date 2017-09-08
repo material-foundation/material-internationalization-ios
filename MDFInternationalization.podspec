@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MDFInternationalization"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.authors      = "The Material Foundation Authors"
   s.summary      = "Internationalization tools."
   s.homepage     = "https://github.com/material-foundation/material-internationalization-ios"
