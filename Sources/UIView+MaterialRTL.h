@@ -23,7 +23,15 @@
  `+[UIView userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:]`.
  */
 
+
+
 @interface UIView (MaterialRTL)
+
+// UISemanticContentAttribute was added in iOS SDK 9.0 but is available on devices running earlier
+// version of iOS. We ignore the partial-availability warning that gets thrown on our use of this
+// symbol.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpartial-availability"
 
 /**
  A semantic description of the view's contents, used to determine whether the view should be flipped
@@ -76,5 +84,7 @@
         (UISemanticContentAttribute)semanticContentAttribute
                                       relativeToLayoutDirection:
                                           (UIUserInterfaceLayoutDirection)layoutDirection;
+
+#pragma clang diagnostic pop
 
 @end
