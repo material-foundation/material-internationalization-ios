@@ -21,6 +21,12 @@
 #define MDF_BASE_SDK_EQUAL_OR_ABOVE(x) \
   (defined(__IPHONE_##x) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_##x))
 
+// UISemanticContentAttribute was added in iOS SDK 9.0 but is available on devices running earlier
+// version of iOS. We ignore the partial-availability warning that gets thrown on our use of this
+// symbol.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpartial-availability"
+
 static inline UIUserInterfaceLayoutDirection
     MDFUserInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
         UISemanticContentAttribute semanticContentAttribute,
@@ -158,3 +164,5 @@ static inline UIUserInterfaceLayoutDirection
 }
 
 @end
+
+#pragma clang diagnostic pop
