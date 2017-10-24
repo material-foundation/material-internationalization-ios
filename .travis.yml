@@ -39,9 +39,10 @@ matrix:
       env: DESTINATION="platform=iOS Simulator,name=iPhone 5,OS=8.1" SDK="iphonesimulator8.1
 
 # Test Execution
+# TODO Enable set -euo pipefail
 script:
-  - set -euo pipefail
   - env
-  - echo xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" test | xcpretty
+  - set -o pipefail
+  - echo xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" test
   - xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" test | xcpretty
 
