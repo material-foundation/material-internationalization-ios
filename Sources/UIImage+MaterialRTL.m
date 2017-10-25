@@ -127,16 +127,22 @@ static UIImage *MDFRTLFlippedImage(UIImage *image) {
   // On iOS 10 and above, UIImage supports the imageWithHorizontallyFlippedOrientation method.
   // Otherwise, we manually manipulate the image.
   if ([self respondsToSelector:@selector(imageWithHorizontallyFlippedOrientation)]) {
+    //TODO(#22): Replace with @availability when we adopt Xcode 9 as our minimum supported version.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpartial-availability"
     return [self imageWithHorizontallyFlippedOrientation];
+#pragma clang diagnostic pop
   } else {
     UIImage *mirroredImage;
     UIImageOrientation mirroredOrientation = MDFRTLMirroredOrientation(self.imageOrientation);
     if (self.CGImage) {
-      mirroredImage = [[self class] imageWithCGImage:self.CGImage
+      CGImageRef _Nonnull image = (CGImageRef _Nonnull)self.CGImage;
+      mirroredImage = [[self class] imageWithCGImage:image
                                                scale:self.scale
                                          orientation:mirroredOrientation];
     } else if (self.CIImage) {
-      mirroredImage = [[self class] imageWithCIImage:self.CIImage
+      CIImage * _Nonnull image = (CIImage * _Nonnull)self.CIImage;
+      mirroredImage = [[self class] imageWithCIImage:image
                                                scale:self.scale
                                          orientation:mirroredOrientation];
     }

@@ -1,5 +1,4 @@
 language: objective-c
-osx_image: xcode8.3
 sudo: false
 
 # Only do a shallow clone of our Git repo.
@@ -17,14 +16,33 @@ branches:
       
 xcode_project: MDFInternationalization.xcodeproj
 xcode_scheme: MDFInternationalizationTests
-xcode_sdk: iphonesimulator10.3
-env:
-  matrix:
-    - DESTINATION="platform=iOS Simulator,name=iPhone 4s,OS=8.3"
-    - DESTINATION="platform=iOS Simulator,name=iPad Air 2,OS=9.2"
-    - DESTINATION="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.3.1"
+
+matrix:
+  include:
+    - osx_image: xcode9
+      # The iPhone X was chosen because it is a device with a strange screen size and
+      # the 'notch'.
+      # OS 11.0 was chosen as the latest generally available iOS version.
+      env: DESTINATION="platform=iOS Simulator,name=iPhone X,OS=11.0" SDK="iphonesimulator11.0"
+    - osx_image: xcode9
+      # The iPhone 7 Plus was chosen because it is a device with a 3x screen and also changes
+      # its size category trait on rotation.
+      # OS 10.3.1 was chosen to represent iOS 10.
+      env: DESTINATION="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.3.1" SDK="iphonesimulator11.0"
+    - osx_image: xcode8.3
+      # The iPad Pro 12.9 was chosen because it is the largest resolution we can test on.
+      # OS 9.3 was chosen to round out the range of iOS versions we are testing on.
+      env: DESTINATION="platform=iOS Simulator,name=iPad Pro (12.9-inch),OS=9.3" SDK="iphonesimulator10.3"
+    - osx_image: xcode8.3
+      # The iPhone 5 was chosen because it is a 32-bit device.
+      # OS 8.1 was chosen because it is the earliest iOS offered here.
+      env: DESTINATION="platform=iOS Simulator,name=iPhone 5,OS=8.1" SDK="iphonesimulator10.3"
 
 # Test Execution
-script: 
-  - xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$TRAVIS_XCODE_SDK" -destination "$DESTINATION" test | xcpretty
+# TODO Enable set -euo pipefail
+script:
+  - env
+  - set -o pipefail
+  - echo xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" test
+  - xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" test | xcpretty
 
