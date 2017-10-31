@@ -30,7 +30,6 @@ fix_bazel_imports() {
   fi
   
   rewrite_source() {
-    find "${stashed_dir}${tests_dir_prefix}Sources" -type f -name '*.h' -exec sed -i '' -E "$1" {} + || true
     find "${stashed_dir}${tests_dir_prefix}Tests" -type f -name '*.h' -exec sed -i '' -E "$1" {} + || true
     find "${stashed_dir}${tests_dir_prefix}Tests" -type f -name '*.m' -exec sed -i '' -E "$1" {} + || true
   }
