@@ -16,6 +16,10 @@
 
 #import <UIKit/UIKit.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  Leading autoresizing mask based on layoutDirection. 'Leading' is 'Left' in
  UIUserInterfaceLayoutDirectionLeftToRight, 'Right' otherwise.
@@ -103,3 +107,7 @@ UIEdgeInsets MDFInsetsMakeWithLayoutDirection(CGFloat top,
                                               CGFloat bottom,
                                               CGFloat trailing,
                                               UIUserInterfaceLayoutDirection layoutDirection);
+
+#ifdef __cplusplus
+}
+#endif
