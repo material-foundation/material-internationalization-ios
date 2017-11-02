@@ -103,7 +103,3 @@ FOUNDATION_EXPORT UIEdgeInsets MDFInsetsMakeWithLayoutDirection(CGFloat top,
                                                                 CGFloat bottom,
                                                                 CGFloat trailing,
                                                                 UIUserInterfaceLayoutDirection layoutDirection);
-
-#ifdef __cplusplus
-}
-#endif
