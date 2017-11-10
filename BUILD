@@ -28,6 +28,7 @@ strict_warnings_objc_library(
     hdrs = glob([
         "Sources/*.h",
     ]),
+    defines = ["IS_BAZEL_BUILD"],
     enable_modules = 1,
     includes = ["Sources"],
     visibility = ["//visibility:public"],
