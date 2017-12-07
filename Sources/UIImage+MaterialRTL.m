@@ -16,6 +16,7 @@
 
 #import "UIImage+MaterialRTL.h"
 
+#import <CoreGraphics/CoreGraphics.h>
 #import <CoreImage/CoreImage.h>
 
 /** Returns the horizontally flipped version of the given UIImageOrientation. */
