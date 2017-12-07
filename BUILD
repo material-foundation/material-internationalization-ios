@@ -28,6 +28,11 @@ strict_warnings_objc_library(
     hdrs = glob([
         "Sources/*.h",
     ]),
+    sdk_frameworks = [
+        "UIKit",
+        "CoreGraphics",
+        "CoreImage",
+    ],
     defines = ["IS_BAZEL_BUILD"],
     enable_modules = 1,
     includes = ["Sources"],
