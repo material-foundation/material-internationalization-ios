@@ -1,3 +1,7 @@
+# 1.0.4
+
+* [[Bazel] Fix BUILD file SDK dependencies (#36)](https://github.com/material-components/material-components-ios/commit/298b51d3523a346a404e7e8c8bda14e27ed65226) (Robert Moore)
+
 # 1.0.3
 
 * [Add compile time flag for import style (#34)](https://github.com/material-foundation/material-internationalization-ios/88af44b587cb03408a827b97aa82234f6a7abc23) (ianegordon)
