@@ -1,4 +1,4 @@
-MDFInternationalization assists in internationalizing your iOS app or components.
+MDFInternationalization assists in internationalizing your iOS app or components' user interface.
 
 [![GitHub release](https://img.shields.io/github/release/material-foundation/material-internationalization-ios.svg)](https://github.com/material-foundation/material-internationalization-ios/releases)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/material-foundation/material-internationalization-ios/blob/develop/LICENSE)
@@ -14,7 +14,9 @@ functions to assist in modifying frames and edge insets for RTL.
 
 ``` obj-c
 // To flip a subview's frame horizontally, pass in subview.frame and the width of its parent.
+CGRect originalFrame = childView.frame;
 CGRect flippedFrame = MDFRectFlippedHorizontally(originalFrame, CGRectGetWidth(self.bounds));
+childView.frame = flippedFrame;
 ```
 
 ## Mirroring Images
