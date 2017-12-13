@@ -39,8 +39,8 @@ A category on UIView backports iOS 9's `-[UIView semanticContentAttribute]` and 
 lockedLTRView.mdf_semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
 
 // mdf_semanticContentAttribute is used to calculate the mdf_effectiveUserInterfaceLayoutDirection
-if ([customControl mdf_effectiveUserInterfaceLayoutDirection] == UIUserInterfaceLayoutDirectionRightToLeft) {
-  // Update customControl's layout to be in RTL mode.
+if (customView.mdf_effectiveUserInterfaceLayoutDirection == UIUserInterfaceLayoutDirectionRightToLeft) {
+  // Update customView's layout to be in RTL mode.
 }
 ```
 
