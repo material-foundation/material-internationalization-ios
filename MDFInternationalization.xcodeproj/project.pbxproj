@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		405E9FD41FFC894A005FA14D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 405E9FD31FFC894A005FA14D /* README.md */; };
 		4096E5BA1D78CB5500389ECD /* MDFInternationalization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4096E5AF1D78CB5500389ECD /* MDFInternationalization.framework */; };
 		4096E5D51D78CBD400389ECD /* MDFInternationalization.h in Headers */ = {isa = PBXBuildFile; fileRef = 4096E5CC1D78CBD400389ECD /* MDFInternationalization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4096E5D71D78CBD400389ECD /* MDFRTL.h in Headers */ = {isa = PBXBuildFile; fileRef = 4096E5CE1D78CBD400389ECD /* MDFRTL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		405E9FD31FFC894A005FA14D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4096E5AF1D78CB5500389ECD /* MDFInternationalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDFInternationalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4096E5B91D78CB5500389ECD /* MDFInternationalizationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MDFInternationalizationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4096E5CB1D78CBD400389ECD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		4096E5A51D78CB5500389ECD = {
 			isa = PBXGroup;
 			children = (
+				405E9FD31FFC894A005FA14D /* README.md */,
 				4096E5C91D78CBB900389ECD /* Sources */,
 				4096E5CA1D78CBC200389ECD /* Tests */,
 				40F838311F50D79300DE0781 /* Packaging */,
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				405E9FD41FFC894A005FA14D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
