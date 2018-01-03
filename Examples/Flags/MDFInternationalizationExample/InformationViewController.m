@@ -40,8 +40,8 @@ static NSString *sWikipediaURL = @"https://wikipedia.org";
 @implementation InformationViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+  // Do any additional setup after loading the view.
 
   self.deviceLabel.text = [UIDevice currentDevice].name;
   NSString *versionString = [NSString stringWithFormat:@"%@ - %@ %@",
