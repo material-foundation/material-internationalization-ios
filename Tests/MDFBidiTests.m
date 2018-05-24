@@ -18,7 +18,7 @@
 
 #import <MDFInternationalization/MDFInternationalization.h>
 
-//TODO Remove any GOO tests
+//TODO Remove any ZZZ tests
 
 @interface MDFBidiTests : XCTestCase
 
@@ -42,14 +42,14 @@
   XCTAssertEqual(MDFResult, NSLocaleLanguageDirectionLeftToRight);
 }
 
-- (void)testGOOLTRStringDirection {
+- (void)testZZZLTRStringDirection {
   NSString *testString = @"The quick brown fox jumps over the lazy dog.";
   NSLocaleLanguageDirection MDFResult = [testString mdf_calculatedLanguageDirection];
   XCTAssertEqual(MDFResult, NSLocaleLanguageDirectionLeftToRight);
 
   //KM
-  NSLocaleLanguageDirection GOOResult = GOOLanguageDirectionOfString(testString);
-  XCTAssertEqual(MDFResult, GOOResult);
+  NSLocaleLanguageDirection ZZZResult = ZZZLanguageDirectionOfString(testString);
+  XCTAssertEqual(MDFResult, ZZZResult);
 }
 
 - (void)testRTLStringDirection {
@@ -58,14 +58,14 @@
   XCTAssertEqual(MDFResult, NSLocaleLanguageDirectionRightToLeft);
 }
 
-- (void)testGOORTLStringDirection {
+- (void)testZZZRTLStringDirection {
   NSString *testString = @"الثعلب البني السريع يقفز فوق الكلب الكسول";
   NSLocaleLanguageDirection MDFResult = [testString mdf_calculatedLanguageDirection];
   XCTAssertEqual(MDFResult, NSLocaleLanguageDirectionRightToLeft);
 
   //KM
-  NSLocaleLanguageDirection GOOResult = GOOLanguageDirectionOfString(testString);
-  XCTAssertEqual(MDFResult, GOOResult);
+  NSLocaleLanguageDirection ZZZResult = ZZZLanguageDirectionOfString(testString);
+  XCTAssertEqual(MDFResult, ZZZResult);
 }
 
 - (void)testAddLTRMarkers {
@@ -75,16 +75,16 @@
   XCTAssertTrue([wrappedString isEqualToString:@"\u202aquick brown fox\u202c"]);
 }
 
-- (void)testGOOAddLTRMarkers {
+- (void)testZZZAddLTRMarkers {
   NSString *testString = @"quick brown fox";
   NSString *wrappedString =
   [testString mdf_stringWithBidiMarkers:NSLocaleLanguageDirectionLeftToRight];
   XCTAssertTrue([wrappedString isEqualToString:@"\u202aquick brown fox\u202c"]);
 
   // KM
-  NSString *gooString =
-  GOOBidiUnicodeWrapWithLanguageDirection(testString, NSLocaleLanguageDirectionLeftToRight);
-  XCTAssertTrue([wrappedString isEqualToString:gooString]);
+  NSString *testZZZString =
+  ZZZBidiUnicodeWrapWithLanguageDirection(testString, NSLocaleLanguageDirectionLeftToRight);
+  XCTAssertTrue([wrappedString isEqualToString:testZZZString]);
 }
 
 - (void)testAddRTLMarkers {
@@ -94,16 +94,16 @@
   XCTAssertTrue([wrappedString isEqualToString:@"\u202bquick brown fox\u202c"]);
 }
 
-- (void)testGOOAddRTLMarkers {
+- (void)testZZZAddRTLMarkers {
   NSString *testString = @"quick brown fox";
   NSString *wrappedString =
   [testString mdf_stringWithBidiMarkers:NSLocaleLanguageDirectionRightToLeft];
   XCTAssertTrue([wrappedString isEqualToString:@"\u202bquick brown fox\u202c"]);
 
   // KM
-  NSString *gooString =
-  GOOBidiUnicodeWrapWithLanguageDirection(testString, NSLocaleLanguageDirectionRightToLeft);
-  XCTAssertTrue([wrappedString isEqualToString:gooString]);
+  NSString *testZZZString =
+  ZZZBidiUnicodeWrapWithLanguageDirection(testString, NSLocaleLanguageDirectionRightToLeft);
+  XCTAssertTrue([wrappedString isEqualToString:testZZZString]);
 }
 
 - (void)testAddRTLRTLMarkers {
@@ -125,16 +125,16 @@
   XCTAssertTrue([wrappedString isEqualToString:@"\u202aThe quick brown fox jumps over the lazy dog.\u202c"]);
 }
 
-- (void)testGOOAddCalculatedMarkers {
+- (void)testZZZAddCalculatedMarkers {
   NSString *testString = @"The quick brown fox jumps over the lazy dog.";
   NSString *wrappedString =
   [testString mdf_stringWithBidiMarkers];
   XCTAssertTrue([wrappedString isEqualToString:@"\u202aThe quick brown fox jumps over the lazy dog.\u202c"]);
 
   // KM
-  NSString *gooString =
-  GOOBidiUnicodeWrap(testString);
-  XCTAssertTrue([wrappedString isEqualToString:gooString]);
+  NSString *testZZZString =
+  ZZZBidiUnicodeWrap(testString);
+  XCTAssertTrue([wrappedString isEqualToString:testZZZString]);
 }
 
 - (void)testStripMarkers {
@@ -143,14 +143,14 @@
   XCTAssertTrue([strippedString isEqualToString:@"The quick brown fox jumps over the lazy dog."]);
 }
 
-- (void)testGOOStripMarkers {
+- (void)testZZZStripMarkers {
   NSString *testString = @"\u202aThe quick brown fox jumps over the lazy dog.\u202c";
   NSString *strippedString = [testString mdf_stringWithBidiMarkersStripped];
   XCTAssertTrue([strippedString isEqualToString:@"The quick brown fox jumps over the lazy dog."]);
 
   //KM
-  NSString *gooString = GOOStripBidiUnicodeCharacters(testString);
-  XCTAssertTrue([strippedString isEqualToString:gooString]);
+  NSString *testZZZString = ZZZStripBidiUnicodeCharacters(testString);
+  XCTAssertTrue([strippedString isEqualToString:testZZZString]);
 }
 
 - (void)testLTRStereoIsolateLTR {
@@ -166,7 +166,7 @@
   XCTAssertTrue([wrappedString isEqualToString:@"\u202aThe quick brown fox jumps over the lazy dog.\u202c"]);
 }
 
-- (void)testGOOLTRStereoIsolateLTR {
+- (void)testZZZLTRStereoIsolateLTR {
   NSString *testString = @"The quick brown fox jumps over the lazy dog.";
   NSLocaleLanguageDirection stringDirection = NSLocaleLanguageDirectionLeftToRight;
   NSLocaleLanguageDirection contextDirection = NSLocaleLanguageDirectionLeftToRight;
@@ -175,8 +175,8 @@
       [testString mdf_stringWithStereoIsolate:stringDirection
                                       context:contextDirection];
 
-  NSString *gooString = GOOBidiUnicodeWrapWithStereoReset(testString, stringDirection, contextDirection);
-  XCTAssertTrue([wrappedString isEqualToString:gooString]);
+  NSString *testZZZString = ZZZBidiUnicodeWrapWithStereoReset(testString, stringDirection, contextDirection);
+  XCTAssertTrue([wrappedString isEqualToString:testZZZString]);
 }
 
 - (void)testLTRStereoIsolateRTL {
@@ -193,7 +193,7 @@
   XCTAssertTrue([wrappedString isEqualToString:@"\u200f\u202aThe quick brown fox jumps over the lazy dog.\u202c\u200f"]);
 }
 
-- (void)testGOOLTRStereoIsolateRTL {
+- (void)testZZZLTRStereoIsolateRTL {
   NSString *testString = @"The quick brown fox jumps over the lazy dog.";
   NSLocaleLanguageDirection stringDirection = NSLocaleLanguageDirectionLeftToRight;
   NSLocaleLanguageDirection contextDirection = NSLocaleLanguageDirectionRightToLeft;
@@ -203,10 +203,10 @@
                                   context:contextDirection];
 
   // !!! wrappedString is "\u202b\u202aThe quick brown fox jumps over the lazy dog.\u202c\u202c
-  // !!! gooString is "\u200f\u202aThe quick brown fox jumps over the lazy dog.\u202c\u200f
+  // !!! testZZZString is "\u200f\u202aThe quick brown fox jumps over the lazy dog.\u202c\u200f
 
-  NSString *gooString = GOOBidiUnicodeWrapWithStereoReset(testString, stringDirection, contextDirection);
-  XCTAssertTrue([wrappedString isEqualToString:gooString]);
+  NSString *testZZZString = ZZZBidiUnicodeWrapWithStereoReset(testString, stringDirection, contextDirection);
+  XCTAssertTrue([wrappedString isEqualToString:testZZZString]);
 }
 
 - (void)testRTLStereoIsolateRTL {
@@ -223,7 +223,7 @@
   XCTAssertTrue([wrappedString isEqualToString:@"\u202bThe quick brown fox jumps over the lazy dog.\u202c"]);
 }
 
-- (void)testGOORTLStereoIsolateRTL {
+- (void)testZZZRTLStereoIsolateRTL {
   NSString *testString = @"The quick brown fox jumps over the lazy dog.";
   NSLocaleLanguageDirection stringDirection = NSLocaleLanguageDirectionRightToLeft;
   NSLocaleLanguageDirection contextDirection = NSLocaleLanguageDirectionRightToLeft;
@@ -233,10 +233,10 @@
                                   context:contextDirection];
 
   // !!! wrappedString is "\u202b\u202aThe quick brown fox jumps over the lazy dog.\u202c\u202c
-  // !!! gooString is "\u200f\u202aThe quick brown fox jumps over the lazy dog.\u202c\u200f
+  // !!! testZZZString is "\u200f\u202aThe quick brown fox jumps over the lazy dog.\u202c\u200f
 
-  NSString *gooString = GOOBidiUnicodeWrapWithStereoReset(testString, stringDirection, contextDirection);
-  XCTAssertTrue([wrappedString isEqualToString:gooString]);
+  NSString *testZZZString = ZZZBidiUnicodeWrapWithStereoReset(testString, stringDirection, contextDirection);
+  XCTAssertTrue([wrappedString isEqualToString:testZZZString]);
 }
 
 //KM
@@ -249,44 +249,44 @@
   XCTAssertEqual(string, strippedString);
 }
 
-// Previous GOOBidiTests
+// Previous ZZZBidiTests
 
-- (void)testGOOLanguageDirectionOfPunctuationString {
+- (void)testZZZLanguageDirectionOfPunctuationString {
   NSString *testString = @"@#%+=-^*";
 
   // Then
   XCTAssertEqual([testString mdf_calculatedLanguageDirection], NSLocaleLanguageDirectionLeftToRight);
 }
 
-- (void)testGOOLanguageDirectionOfNumericString {
+- (void)testZZZLanguageDirectionOfNumericString {
   NSString *testString = @"123";
 
   // Then
   XCTAssertEqual([testString mdf_calculatedLanguageDirection], NSLocaleLanguageDirectionLeftToRight);
 }
 
-- (void)testGOOLanguageDirectionOfHebrewString {
+- (void)testZZZLanguageDirectionOfHebrewString {
   NSString *testString = @"!שלום";
 
   // Then
   XCTAssertEqual([testString mdf_calculatedLanguageDirection], NSLocaleLanguageDirectionRightToLeft);
 }
 
-- (void)testGOOLanguageDirectionOfEnglishString {
+- (void)testZZZLanguageDirectionOfEnglishString {
   NSString *testString = @"Hello!";
 
   // Then
   XCTAssertEqual([testString mdf_calculatedLanguageDirection], NSLocaleLanguageDirectionLeftToRight);
 }
 
-- (void)testGOOLanguageDirectionOfEmptyString {
+- (void)testZZZLanguageDirectionOfEmptyString {
   NSString *testString = @"";
 
   // Then
   XCTAssertEqual([testString mdf_calculatedLanguageDirection], NSLocaleLanguageDirectionLeftToRight);
 }
 
-- (void)testGOOLanguageDirectionOfBidiString {
+- (void)testZZZLanguageDirectionOfBidiString {
   NSString *rtlText =  @"اميل";
 //  NSString *wrappedText = [rtlText mdf_stringWithBidiMarkers:NSLocaleLanguageDirectionRightToLeft];
   NSString *wrappedText =

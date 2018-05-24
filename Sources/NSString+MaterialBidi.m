@@ -25,9 +25,9 @@
 // ??? Useful? : Unicode® Standard Annex #9 UNICODE BIDIRECTIONAL ALGORITHM
 // http://unicode.org/reports/tr9/
 //TODO s/GOO/MDF/
-static NSString *kGOOLTREmbedding = @"\u202a";  // left-to-right override
-static NSString *kGOORTLEmbedding = @"\u202b";  // right-to-left override
-static NSString *kGOOBidiPopEmbedding = @"\u202c";  // pop directional formatting
+static NSString *kMDFLTREmbedding = @"\u202a";  // left-to-right override
+static NSString *kMDFRTLEmbedding = @"\u202b";  // right-to-left override
+static NSString *kMDFBidiPopEmbedding = @"\u202c";  // pop directional formatting
 
 // TODO : Reach out to Aharon + lmr@ about the utility of the Isolate markers
 static NSString *kMDFLTRIsolate = @"\u2066";  // left-to-right isolate
@@ -74,10 +74,10 @@ static NSString *kMDFRTLMark = @"\u200f";  // right-to-left mark
     // might present themselves
     // TODO If so only check the first and last character
     // TODO Here and below
-    if ([self rangeOfString:kGOORTLEmbedding options:0 range:NSMakeRange(0, 1)].location == NSNotFound ||
-        [self rangeOfString:kGOOBidiPopEmbedding options:NSBackwardsSearch].location == NSNotFound) {
+    if ([self rangeOfString:kMDFRTLEmbedding options:0 range:NSMakeRange(0, 1)].location == NSNotFound ||
+        [self rangeOfString:kMDFBidiPopEmbedding options:NSBackwardsSearch].location == NSNotFound) {
       NSString *directionString =
-          [NSString stringWithFormat:@"%@%@%@", kGOORTLEmbedding, self, kGOOBidiPopEmbedding];
+          [NSString stringWithFormat:@"%@%@%@", kMDFRTLEmbedding, self, kMDFBidiPopEmbedding];
       return directionString;
     } else {
       return [self copy];
@@ -85,7 +85,7 @@ static NSString *kMDFRTLMark = @"\u200f";  // right-to-left mark
   } else if (languageDirection == NSLocaleLanguageDirectionLeftToRight) {
     //TODO Check for existing markers
     NSString *directionString =
-        [NSString stringWithFormat:@"%@%@%@", kGOOLTREmbedding, self, kGOOBidiPopEmbedding];
+        [NSString stringWithFormat:@"%@%@%@", kMDFLTREmbedding, self, kMDFBidiPopEmbedding];
     return directionString;
   } else {
     // ??? Originally this just returned self.  Do we want to return a copy?
@@ -135,9 +135,9 @@ static NSString *kMDFRTLMark = @"\u200f";  // right-to-left mark
 
 - (NSString *)mdf_stringWithBidiMarkersStripped {
   NSString *strippedString = self;
-  NSArray <NSString *>*directionalMarkers = @[ kGOORTLEmbedding,
-                                               kGOOLTREmbedding,
-                                               kGOOBidiPopEmbedding,
+  NSArray <NSString *>*directionalMarkers = @[ kMDFRTLEmbedding,
+                                               kMDFLTREmbedding,
+                                               kMDFBidiPopEmbedding,
                                                kMDFLTRIsolate,
                                                kMDFRTLIsolate,
                                                kMDFPopIsolate,

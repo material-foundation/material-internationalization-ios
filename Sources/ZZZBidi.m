@@ -1,18 +1,18 @@
 //KM
 
-#import "GOOBidi.h"
+#import "ZZZBidi.h"
 
 #import <CoreFoundation/CoreFoundation.h>
 
 // A string literal that requires bidi embedding can be surrounded by these macro-defined string
 // literals and the compiler will automatically concatenate them.
-#define kGOOLTREmbedding @"\u202a"  // left-to-right override
-#define kGOORTLEmbedding @"\u202b"  // right-to-left override
-#define kGOOBidiPopEmbedding @"\u202c"  // pop directional formatting
-#define kGOOLRMark @"\u200e"  // left-to-right mark
-#define kGOORLMark @"\u200f"  // right-to-left mark
+#define kZZZLTREmbedding @"\u202a"  // left-to-right override
+#define kZZZRTLEmbedding @"\u202b"  // right-to-left override
+#define kZZZBidiPopEmbedding @"\u202c"  // pop directional formatting
+#define kZZZLRMark @"\u200e"  // left-to-right mark
+#define kZZZRLMark @"\u200f"  // right-to-left mark
 
-//BOOL GOOIsRegionLanguageDirectionRTL(void) {
+//BOOL ZZZIsRegionLanguageDirectionRTL(void) {
 //  NSString *languageCode = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
 //  NSLocaleLanguageDirection characterDirection =
 //  [NSLocale characterDirectionForLanguage:languageCode];
@@ -21,7 +21,7 @@
 //  return regionLanguageDirectionIsRTL;
 //}
 
-NSLocaleLanguageDirection GOOLanguageDirectionOfString(NSString *string) {
+NSLocaleLanguageDirection ZZZLanguageDirectionOfString(NSString *string) {
   if (!string) return NSLocaleLanguageDirectionUnknown;
 
   // Determine language of string.
@@ -40,7 +40,7 @@ NSLocaleLanguageDirection GOOLanguageDirectionOfString(NSString *string) {
   return languageDirection;
 }
 
-static NSString *GOOBidiWrapWithDirectionMarks(NSString *stringToBeInserted,
+static NSString *ZZZBidiWrapWithDirectionMarks(NSString *stringToBeInserted,
                                                NSLocaleLanguageDirection contextStringDirection,
                                                NSLocaleLanguageDirection stringToBeInsertedDirection) {
   // Only isolate if string directionality differs from context directionality.
@@ -50,9 +50,9 @@ static NSString *GOOBidiWrapWithDirectionMarks(NSString *stringToBeInserted,
 
   NSString *explicitDirectionFormat;
   if (contextStringDirection == NSLocaleLanguageDirectionRightToLeft) {
-    explicitDirectionFormat = kGOORLMark @"%@" kGOORLMark;
+    explicitDirectionFormat = kZZZRLMark @"%@" kZZZRLMark;
   } else if (contextStringDirection == NSLocaleLanguageDirectionLeftToRight) {
-    explicitDirectionFormat = kGOOLRMark @"%@" kGOOLRMark;
+    explicitDirectionFormat = kZZZLRMark @"%@" kZZZLRMark;
   } else {
     return stringToBeInserted;
   }
@@ -63,7 +63,7 @@ static NSString *GOOBidiWrapWithDirectionMarks(NSString *stringToBeInserted,
   return directionString;
 }
 
-NSString *GOOBidiUnicodeWrapWithStereoReset(NSString *stringToBeInserted,
+NSString *ZZZBidiUnicodeWrapWithStereoReset(NSString *stringToBeInserted,
                                             NSLocaleLanguageDirection stringToBeInsertedDirection,
                                             NSLocaleLanguageDirection contextStringDirection) {
 #if DEBUG
@@ -83,34 +83,34 @@ NSString *GOOBidiUnicodeWrapWithStereoReset(NSString *stringToBeInserted,
   if (!stringToBeInserted || stringToBeInserted.length <= 0) return stringToBeInserted;
 
   if (stringToBeInsertedDirection == NSLocaleLanguageDirectionUnknown) {
-    stringToBeInsertedDirection = GOOLanguageDirectionOfString(stringToBeInserted);
+    stringToBeInsertedDirection = ZZZLanguageDirectionOfString(stringToBeInserted);
   }
 
-  NSString *wrappedString = GOOBidiUnicodeWrapWithLanguageDirection(stringToBeInserted,
+  NSString *wrappedString = ZZZBidiUnicodeWrapWithLanguageDirection(stringToBeInserted,
                                                                     stringToBeInsertedDirection);
 
-  return GOOBidiWrapWithDirectionMarks(wrappedString,
+  return ZZZBidiWrapWithDirectionMarks(wrappedString,
                                        contextStringDirection,
                                        stringToBeInsertedDirection);
 }
 
-NSString *GOOBidiUnicodeWrap(NSString *string) {
+NSString *ZZZBidiUnicodeWrap(NSString *string) {
   if (!string) return string;
 
-  NSLocaleLanguageDirection languageDirection = GOOLanguageDirectionOfString(string);
+  NSLocaleLanguageDirection languageDirection = ZZZLanguageDirectionOfString(string);
 
-  return GOOBidiUnicodeWrapWithLanguageDirection(string, languageDirection);
+  return ZZZBidiUnicodeWrapWithLanguageDirection(string, languageDirection);
 }
 
-NSString *GOOBidiUnicodeWrapWithLanguageDirection(NSString *string,
+NSString *ZZZBidiUnicodeWrapWithLanguageDirection(NSString *string,
                                                   NSLocaleLanguageDirection languageDirection) {
   if (!string) return string;
 
   NSString *explicitDirectionFormat;
   if (languageDirection == NSLocaleLanguageDirectionRightToLeft) {
-    explicitDirectionFormat = kGOORTLEmbedding @"%@" kGOOBidiPopEmbedding;
+    explicitDirectionFormat = kZZZRTLEmbedding @"%@" kZZZBidiPopEmbedding;
   } else if (languageDirection == NSLocaleLanguageDirectionLeftToRight) {
-    explicitDirectionFormat = kGOOLTREmbedding @"%@" kGOOBidiPopEmbedding;
+    explicitDirectionFormat = kZZZLTREmbedding @"%@" kZZZBidiPopEmbedding;
   } else {
     // Return original string if wrong direction is passed in.
     return string;
@@ -119,12 +119,12 @@ NSString *GOOBidiUnicodeWrapWithLanguageDirection(NSString *string,
   return directionString;
 }
 
-NSString *GOOStripBidiUnicodeCharacters(NSString *string) {
-  NSArray *directionalMarkers = @[ kGOORTLEmbedding,
-                                   kGOOLTREmbedding,
-                                   kGOOBidiPopEmbedding,
-                                   kGOOLRMark,
-                                   kGOORLMark ];
+NSString *ZZZStripBidiUnicodeCharacters(NSString *string) {
+  NSArray *directionalMarkers = @[ kZZZRTLEmbedding,
+                                   kZZZLTREmbedding,
+                                   kZZZBidiPopEmbedding,
+                                   kZZZLRMark,
+                                   kZZZRLMark ];
   for (NSString *markerString in directionalMarkers) {
     string = [string stringByReplacingOccurrencesOfString:markerString withString:@""];
   }
