@@ -33,7 +33,6 @@ strict_warnings_objc_library(
         "CoreGraphics",
         "CoreImage",
     ],
-    defines = ["IS_BAZEL_BUILD"],
     enable_modules = 1,
     includes = ["Sources"],
     visibility = ["//visibility:public"],
