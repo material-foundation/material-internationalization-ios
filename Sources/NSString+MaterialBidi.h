@@ -16,10 +16,6 @@
 
 #import <Foundation/Foundation.h>
 
-//??? Category versus functions
-// TBD  Originally mog & featherless were advocating standard C func
-
-
 //TODO Swift annotations
 //TODO Clean up method docs
 

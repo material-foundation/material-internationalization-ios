@@ -11,7 +11,7 @@ extern "C" {
 #endif  // __cplusplus
 
   /** Returns YES if the device's region language direction is right-to-left. */
-  BOOL GOOIsRegionLanguageDirectionRTL(void);
+  BOOL ZZZIsRegionLanguageDirectionRTL(void);
 
   /**
    Uses CFStringTokenizerCopyBestStringLanguage to determine string's language direction.
@@ -23,7 +23,7 @@ extern "C" {
    @c NSLocaleLanguageDirectionLeftToRight if the contents are ambiguous,
    else the locale language direction of the contents of @c string.
    */
-  NSLocaleLanguageDirection GOOLanguageDirectionOfString(NSString *string);
+  NSLocaleLanguageDirection ZZZLanguageDirectionOfString(NSString *string);
 
   /**
    Formats a given string of unknown directionality.
@@ -35,7 +35,7 @@ extern "C" {
    around the string:
    RLE+|string|+PDF for RTL text, or LRE+|string|+PDF for LTR text.
    */
-  NSString *GOOBidiUnicodeWrap(NSString *string);
+  NSString *ZZZBidiUnicodeWrap(NSString *string);
 
   /**
    Returns a string formatted with the given language direction.
@@ -43,9 +43,9 @@ extern "C" {
    Only NSLocaleLanguageDirectionLeftToRight and NSLocaleLanguageDirectionRightToLeft
    language directions are supported.
 
-   See GOOBidiUnicodeWrap() for more details.
+   See ZZZBidiUnicodeWrap() for more details.
    */
-  NSString *GOOBidiUnicodeWrapWithLanguageDirection(NSString *string,
+  NSString *ZZZBidiUnicodeWrapWithLanguageDirection(NSString *string,
                                                     NSLocaleLanguageDirection languageDirection);
 
   /**
@@ -57,15 +57,15 @@ extern "C" {
 
    |contextStringDirection| must be specificed and cannot be unknown. Only
    NSLocaleLanguageDirectionLeftToRight and NSLocaleLanguageDirectionRightToLeft language directions
-   are supported. Use GOOLanguageDirectionOfString to estimate the string if directionality is
+   are supported. Use ZZZLanguageDirectionOfString to estimate the string if directionality is
    unknown.
    */
-  NSString *GOOBidiUnicodeWrapWithStereoReset(NSString *stringToBeInserted,
+  NSString *ZZZBidiUnicodeWrapWithStereoReset(NSString *stringToBeInserted,
                                               NSLocaleLanguageDirection stringToBeInsertedDirection,
                                               NSLocaleLanguageDirection contextStringDirection);
 
   /** Removes Unicode bidirectional format markers from the string. */
-  NSString *GOOStripBidiUnicodeCharacters(NSString *string);
+  NSString *ZZZStripBidiUnicodeCharacters(NSString *string);
 
 #if defined __cplusplus
 }  // extern "C"
