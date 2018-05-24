@@ -24,6 +24,12 @@ git_repository(
     tag = "0.4.0",
 )
 
+http_file(
+    name = "xctestrunner",
+    executable = 1,
+    url = "https://github.com/google/xctestrunner/releases/download/0.2.3/ios_test_runner.par",
+)
+
 git_repository(
     name = "bazel_ios_warnings",
     remote = "https://github.com/material-foundation/bazel_ios_warnings.git",
