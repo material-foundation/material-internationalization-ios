@@ -18,6 +18,7 @@
 
 #import <MDFInternationalization/MDFRTL.h>
 #import <MDFInternationalization/ZZZBidi.h>  //KMKMKM
+#import <MDFInternationalization/NSLocale+MaterialRTL.h>
 #import <MDFInternationalization/NSString+MaterialBidi.h>
 #import <MDFInternationalization/UIImage+MaterialRTL.h>
 #import <MDFInternationalization/UIView+MaterialRTL.h>
