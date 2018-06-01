@@ -300,7 +300,15 @@
 
   // Then
   //TODO Test string contents, not direction.
+  //FIXME Determine the proper behavior
   XCTAssertEqual([testString mdf_calculatedLanguageDirection], NSLocaleLanguageDirectionLeftToRight);
+}
+
+- (void)testZZZLocaleDirection {
+  BOOL isZZZRTL = ZZZIsRegionLanguageDirectionRTL();
+  BOOL isRTL = [NSLocale mdf_isDefaultLanguageRTL];
+
+  XCTAssertTrue(isZZZRTL == isRTL);
 }
 
 @end

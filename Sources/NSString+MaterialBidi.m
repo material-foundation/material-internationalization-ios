@@ -24,12 +24,11 @@
 // ??? Do we want Embedding or Isolate markers? w3 recommends isolate?
 // ??? Useful? : Unicode® Standard Annex #9 UNICODE BIDIRECTIONAL ALGORITHM
 // http://unicode.org/reports/tr9/
-//TODO s/GOO/MDF/
 static NSString *kMDFLTREmbedding = @"\u202a";  // left-to-right override
 static NSString *kMDFRTLEmbedding = @"\u202b";  // right-to-left override
 static NSString *kMDFBidiPopEmbedding = @"\u202c";  // pop directional formatting
 
-// TODO : Reach out to Aharon + lmr@ about the utility of the Isolate markers
+// TODO : Reach out to Aharon + lmr about the utility of the Isolate markers
 static NSString *kMDFLTRIsolate = @"\u2066";  // left-to-right isolate
 static NSString *kMDFRTLIsolate = @"\u2067";  // right-to-left isolate
 static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
