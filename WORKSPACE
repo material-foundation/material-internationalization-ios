@@ -12,6 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+git_repository(
+    name = "io_bazel",
+    remote = "https://github.com/bazelbuild/bazel.git",
+    tag = "0.14.0",
+)
+
 git_repository(
     name = "build_bazel_rules_apple",
     remote = "https://github.com/bazelbuild/rules_apple.git",
