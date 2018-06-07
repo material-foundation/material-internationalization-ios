@@ -41,7 +41,9 @@ strict_warnings_objc_library(
 
 apple_framework_relative_headers(
     name = "MDFInternationalizationFrameworkHeaders",
-    hdrs = ["Source/Bar.h"],
+    hdrs = glob([
+        "Sources/*.h",
+    ]),
     framework_name = "MDFInternationalization",
 )
 
