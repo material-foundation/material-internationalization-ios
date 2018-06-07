@@ -13,10 +13,18 @@
 # limitations under the License.
 
 
+#git_repository(
+#    name = "io_bazel",
+#    remote = "https://github.com/bazelbuild/bazel.git",
+#    tag = "0.14.0",
+#)
+
+
+
 git_repository(
-    name = "io_bazel",
-    remote = "https://github.com/bazelbuild/bazel.git",
-    tag = "0.14.0",
+    name = "com_github_bazelbuild_buildtools",
+    remote = "https://github.com/bazelbuild/buildtools.git",
+    tag = "0.11.1",
 )
 
 git_repository(
