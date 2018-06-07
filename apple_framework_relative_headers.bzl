@@ -34,7 +34,7 @@ apple_framework_relative_headers = rule(
             cfg="host",
             allow_files=True,
             single_file=True,
-            default=Label("@bazel_tools//tools/objc:realpath"),
+            default=Label("@com_github_bazelbuild_buildtools//tools/objc:realpath"),
         ),
     },
 )
