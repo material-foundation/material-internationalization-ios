@@ -21,14 +21,14 @@
 @implementation NSString (MaterialBidi)
 
 // https://www.w3.org/International/questions/qa-bidi-unicode-controls
+// TODO : Reach out to AAA about the utility of the Isolate markers
 // ??? Do we want Embedding or Isolate markers? w3 recommends isolate?
-// ??? Useful? : Unicode® Standard Annex #9 UNICODE BIDIRECTIONAL ALGORITHM
+// Add reference : Unicode® Standard Annex #9 UNICODE BIDIRECTIONAL ALGORITHM
 // http://unicode.org/reports/tr9/
 static NSString *kMDFLTREmbedding = @"\u202a";  // left-to-right override
 static NSString *kMDFRTLEmbedding = @"\u202b";  // right-to-left override
 static NSString *kMDFBidiPopEmbedding = @"\u202c";  // pop directional formatting
 
-// TODO : Reach out to Aharon + lmr about the utility of the Isolate markers
 static NSString *kMDFLTRIsolate = @"\u2066";  // left-to-right isolate
 static NSString *kMDFRTLIsolate = @"\u2067";  // right-to-left isolate
 static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
@@ -52,6 +52,7 @@ static NSString *kMDFRTLMark = @"\u200f";  // right-to-left mark
   }
 
   // If the result is not LTR or RTL, fallback to LTR
+  // ??? Should I be defaulting to NSLocale.NSLocaleLanguageCode.characterDiretion?
   if (languageDirection != NSLocaleLanguageDirectionLeftToRight &&
       languageDirection != NSLocaleLanguageDirectionRightToLeft) {
     languageDirection = NSLocaleLanguageDirectionLeftToRight;
@@ -69,7 +70,7 @@ static NSString *kMDFRTLMark = @"\u200f";  // right-to-left mark
 - (NSString *)mdf_stringWithBidiMarkers:(NSLocaleLanguageDirection)languageDirection {
   if (languageDirection == NSLocaleLanguageDirectionRightToLeft) {
     // ??? Should we check for existing markers - MAYBE, must be exact requested markers
-    // ??? Ask Aharon why / why not.  Would you ever want to double wrap?  What other optimizations
+    // ??? AAA: why / why not?  Would you ever want to double wrap?  What other optimizations
     // might present themselves
     // TODO If so only check the first and last character
     // TODO Here and below
@@ -109,6 +110,7 @@ static NSString *kMDFRTLMark = @"\u200f";  // right-to-left mark
             @"stringToBeInsertedDirection must be set to either NSLocaleLanguageDirectionUnknown,"
             "NSLocaleLanguageDirectionLeftToRight, or NSLocaleLanguageDirectionRightToLeft.");
 #endif
+  //TODO Add proper error handling
 
   if (self.length == 0) {
     return [self copy];

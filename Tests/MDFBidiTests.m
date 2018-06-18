@@ -288,7 +288,10 @@
 
 - (void)testZZZLanguageDirectionOfBidiString {
   NSString *rtlText =  @"اميل";
-//  NSString *wrappedText = [rtlText mdf_stringWithBidiMarkers:NSLocaleLanguageDirectionRightToLeft];
+  // Note that setting this text to a latin name results in LTR
+  // NSString *rtlText =  @"Steve";
+
+  //  NSString *wrappedText = [rtlText mdf_stringWithBidiMarkers:NSLocaleLanguageDirectionRightToLeft];
   NSString *wrappedText =
       [rtlText mdf_stringWithStereoIsolate:NSLocaleLanguageDirectionRightToLeft
                                    context:NSLocaleLanguageDirectionLeftToRight];
