@@ -64,9 +64,10 @@
  string to prevent it from garbling the content around it. Use this method when inserting output
  string into another format string.
 
- |stringToBeInsertedDirection| can be NSLocaleLanguageDirectionUnknown.
+ |direction| can be NSLocaleLanguageDirectionLeftToRight, NSLocaleLanguageDirectionRightToLeft, or
+ NSLocaleLanguageDirectionUnknown.
 
- |contextStringDirection| must be specificed and cannot be unknown. Only
+ |contextDirection| must be specificed and cannot be unknown. Only
  NSLocaleLanguageDirectionLeftToRight and NSLocaleLanguageDirectionRightToLeft language directions
  are supported. Use mdf_calculatedLanguageDirection to estimate the string if directionality is
  unknown.
