@@ -299,6 +299,7 @@
   // @"Hello اميل! (19 July)"
 
   //??? RTL - Arabic Characters having a stronger effect?  Is this intended behavior
+  // Possibly 'any-RTL' : a string containing any RTL characters will be treated as RTL
   NSLocaleLanguageDirection direction = [testString mdf_calculatedLanguageDirection];
 
   // Then

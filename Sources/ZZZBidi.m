@@ -26,6 +26,7 @@
 #define kZZZLRMark @"\u200e"  // left-to-right mark
 #define kZZZRLMark @"\u200f"  // right-to-left mark
 
+
 BOOL ZZZIsRegionLanguageDirectionRTL(void) {
   NSString *languageCode = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
   NSLocaleLanguageDirection characterDirection =
@@ -34,6 +35,7 @@ BOOL ZZZIsRegionLanguageDirectionRTL(void) {
   (characterDirection == NSLocaleLanguageDirectionRightToLeft);
   return regionLanguageDirectionIsRTL;
 }
+
 
 NSLocaleLanguageDirection ZZZLanguageDirectionOfString(NSString *string) {
   if (!string) return NSLocaleLanguageDirectionUnknown;
@@ -53,6 +55,7 @@ NSLocaleLanguageDirection ZZZLanguageDirectionOfString(NSString *string) {
   }
   return languageDirection;
 }
+
 
 static NSString *ZZZBidiWrapWithDirectionMarks(NSString *stringToBeInserted,
                                                NSLocaleLanguageDirection contextStringDirection,
@@ -76,6 +79,7 @@ static NSString *ZZZBidiWrapWithDirectionMarks(NSString *stringToBeInserted,
 
   return directionString;
 }
+
 
 NSString *ZZZBidiUnicodeWrapWithStereoReset(NSString *stringToBeInserted,
                                             NSLocaleLanguageDirection stringToBeInsertedDirection,
@@ -108,6 +112,7 @@ NSString *ZZZBidiUnicodeWrapWithStereoReset(NSString *stringToBeInserted,
                                        stringToBeInsertedDirection);
 }
 
+
 NSString *ZZZBidiUnicodeWrap(NSString *string) {
   if (!string) return string;
 
@@ -115,6 +120,7 @@ NSString *ZZZBidiUnicodeWrap(NSString *string) {
 
   return ZZZBidiUnicodeWrapWithLanguageDirection(string, languageDirection);
 }
+
 
 NSString *ZZZBidiUnicodeWrapWithLanguageDirection(NSString *string,
                                                   NSLocaleLanguageDirection languageDirection) {
@@ -132,6 +138,7 @@ NSString *ZZZBidiUnicodeWrapWithLanguageDirection(NSString *string,
   NSString *directionString = [NSString stringWithFormat:explicitDirectionFormat, string];
   return directionString;
 }
+
 
 NSString *ZZZStripBidiUnicodeCharacters(NSString *string) {
   NSArray *directionalMarkers = @[ kZZZRTLEmbedding,

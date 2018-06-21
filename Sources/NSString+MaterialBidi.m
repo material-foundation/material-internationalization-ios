@@ -24,17 +24,21 @@
 // TODO : Reach out to AAA about the utility of the Isolate markers
 // ??? Do we want Embedding or Isolate markers? w3 recommends isolate?
 // Add reference : Unicode® Standard Annex #9 UNICODE BIDIRECTIONAL ALGORITHM
+// go/android-bidiformatter
 // http://unicode.org/reports/tr9/
-static NSString *kMDFLTREmbedding = @"\u202a";  // left-to-right override
-static NSString *kMDFRTLEmbedding = @"\u202b";  // right-to-left override
-static NSString *kMDFBidiPopEmbedding = @"\u202c";  // pop directional formatting
-
-static NSString *kMDFLTRIsolate = @"\u2066";  // left-to-right isolate
-static NSString *kMDFRTLIsolate = @"\u2067";  // right-to-left isolate
-static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
+static NSString *kMDFLTREmbedding = @"\u202a";  // left-to-right embedding
+static NSString *kMDFRTLEmbedding = @"\u202b";  // right-to-left embedding
+static NSString *kMDFBidiPopEmbedding = @"\u202c";  // pop directional embedding
 
 static NSString *kMDFLTRMark = @"\u200e";  // left-to-right mark
 static NSString *kMDFRTLMark = @"\u200f";  // right-to-left mark
+
+// The following only work on iOS 10+
+static NSString *kMDFLTRIsolate = @"\u2066";  // left-to-right isolate
+static NSString *kMDFRTLIsolate = @"\u2067";  // right-to-left isolate
+static NSString *kMDFFirstStrongIsolate = @"\u2068";  // first strong isolate
+static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
+
 
 - (NSLocaleLanguageDirection)mdf_calculatedLanguageDirection {
   // Attempt to determine language of string.
