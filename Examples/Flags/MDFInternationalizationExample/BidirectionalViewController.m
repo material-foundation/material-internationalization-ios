@@ -49,6 +49,7 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
   self.labelTwo.text = @"a-)-b  Embed  a-\u202b)\u202c-b";
 //  self.labelThree.text = @"1st  a-\u2068.)\u200f\u2069-b";
 //  self.labelFour.text = @"1st  a-\u2068\u200f.)\u2069-b";
+//  self.labelFour.text = @"الو" // Hello
   NSString *three = [NSString stringWithFormat:@"Read %@15 books%@ EOL", kMDFFirstStrongIsolate, kMDFPopIsolate];
   self.labelThree.text = three;
   NSString *four = [NSString stringWithFormat:@"Read %@15 كتاب%@ EOL", kMDFFirstStrongIsolate, kMDFPopIsolate];
