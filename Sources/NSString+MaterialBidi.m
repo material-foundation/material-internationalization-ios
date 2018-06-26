@@ -145,6 +145,7 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
                                                kMDFBidiPopEmbedding,
                                                kMDFLTRIsolate,
                                                kMDFRTLIsolate,
+                                               kMDFFirstStrongIsolate,
                                                kMDFPopIsolate,
                                                kMDFLTRMark,
                                                kMDFRTLMark ];
