@@ -45,8 +45,11 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  self.labelOne.text = @"a-)-b  Isolate  a-\u2067)\u2069-b";
-  self.labelTwo.text = @"a-)-b  Embed  a-\u202b)\u202c-b";
+  // The following lines will display a (: if the markers are supported, ): if not.
+  self.labelOne.text =
+      [NSString stringWithFormat:@"Bidi Isolate supported %@)%@:", kMDFRTLIsolate, kMDFPopIsolate];
+  self.labelTwo.text =
+      [NSString stringWithFormat:@"Bidi Embed supported %@)%@:", kMDFRTLEmbedding, kMDFBidiPopEmbedding];
 //  self.labelThree.text = @"1st  a-\u2068.)\u200f\u2069-b";
 //  self.labelFour.text = @"1st  a-\u2068\u200f.)\u2069-b";
 //  self.labelFour.text = @"الو" // Hello
