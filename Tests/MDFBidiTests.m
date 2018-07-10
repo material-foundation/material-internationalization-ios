@@ -18,7 +18,7 @@
 
 #import <MDFInternationalization/MDFInternationalization.h>
 
-//TODO Remove any ZZZ tests
+//TODO: Remove any ZZZ tests
 
 @interface MDFBidiTests : XCTestCase
 
@@ -301,11 +301,13 @@
   //??? RTL - Arabic Characters having a stronger effect?  Is this intended behavior
   // Possibly 'any-RTL' : a string containing any RTL characters will be treated as RTL
   NSLocaleLanguageDirection direction = [testString mdf_calculatedLanguageDirection];
+  NSLocaleLanguageDirection ZZZDirection = ZZZLanguageDirectionOfString(testString);
 
   // Then
-  //TODO Test string contents, not direction.
+  XCTAssertEqual(direction, ZZZDirection);
+  //TODO: Test string contents, not direction.
   //FIXME Determine the proper behavior
-  XCTAssertEqual([testString mdf_calculatedLanguageDirection], NSLocaleLanguageDirectionLeftToRight);
+//  XCTAssertEqual([testString mdf_calculatedLanguageDirection], NSLocaleLanguageDirectionLeftToRight);
 }
 
 - (void)testZZZLocaleDirection {

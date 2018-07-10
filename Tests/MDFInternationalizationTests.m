@@ -16,6 +16,8 @@
 
 #import <XCTest/XCTest.h>
 
+//FIXME: Remove this file if there are no tests
+
 @interface MDFInternationalizationTests : XCTestCase
 
 @end

@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-//TODO(IEG) Docs
+//TODO:(IEG) Docs
 
 @interface NSLocale (MaterialRTL)
 
