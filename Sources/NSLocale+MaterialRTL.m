@@ -16,7 +16,7 @@
 
 #import "NSLocale+MaterialRTL.h"
 
-//TODO(IEG) Docs
+//TODO:(IEG) Docs
 
 @implementation NSLocale (MaterialRTL)
 

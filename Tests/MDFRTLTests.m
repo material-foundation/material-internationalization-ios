@@ -108,10 +108,10 @@
   XCTAssertTrue(flippedOriginalImage.renderingMode == UIImageRenderingModeAlwaysOriginal);
 }
 
-//TODO(IEG): test locale directionality
+//TODO: (IEG)test locale directionality
 
 
-//TODO(#6): Implement per-pixel comparison
+//TODO: (#6) Implement per-pixel comparison
 //- (void)testImageMirror {
 //  UIImage *sourceImage = [RTLTests standardImage];
 //  UIImage *flippedImage = [sourceImage mdf_imageWithHorizontallyFlippedOrientation];

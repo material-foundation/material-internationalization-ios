@@ -10,6 +10,8 @@
 		4008C247201B6A3D00F089DB /* MDFBidiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4008C246201B6A3D00F089DB /* MDFBidiTests.m */; };
 		4043BA14201B68CA00067BBC /* ZZZBidi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4043BA12201B68CA00067BBC /* ZZZBidi.m */; };
 		4043BA15201B68CA00067BBC /* ZZZBidi.h in Headers */ = {isa = PBXBuildFile; fileRef = 4043BA13201B68CA00067BBC /* ZZZBidi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		404B29FF20F5631800FA5DB0 /* NSLocale+MaterialRTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 404B29FD20F5631800FA5DB0 /* NSLocale+MaterialRTL.m */; };
+		404B2A0020F5631800FA5DB0 /* NSLocale+MaterialRTL.h in Headers */ = {isa = PBXBuildFile; fileRef = 404B29FE20F5631800FA5DB0 /* NSLocale+MaterialRTL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		405E9FD41FFC894A005FA14D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 405E9FD31FFC894A005FA14D /* README.md */; };
 		407431D5201A67000031D58A /* NSString+MaterialBidi.h in Headers */ = {isa = PBXBuildFile; fileRef = 407431D3201A67000031D58A /* NSString+MaterialBidi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		407431D6201A67000031D58A /* NSString+MaterialBidi.m in Sources */ = {isa = PBXBuildFile; fileRef = 407431D4201A67000031D58A /* NSString+MaterialBidi.m */; };
@@ -23,8 +25,6 @@
 		4096E5DC1D78CBD400389ECD /* UIView+MaterialRTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4096E5D31D78CBD400389ECD /* UIView+MaterialRTL.m */; };
 		4096E5E11D78CC0100389ECD /* MDFInternationalizationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4096E5DE1D78CBE700389ECD /* MDFInternationalizationTests.m */; };
 		4096E5E61D78E02600389ECD /* MDFRTLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4096E5E51D78E02600389ECD /* MDFRTLTests.m */; };
-		40C7275720D864CF001F2162 /* NSLocale+MaterialRTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C7275520D864CE001F2162 /* NSLocale+MaterialRTL.m */; };
-		40C7275820D864CF001F2162 /* NSLocale+MaterialRTL.h in Headers */ = {isa = PBXBuildFile; fileRef = 40C7275620D864CE001F2162 /* NSLocale+MaterialRTL.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +41,8 @@
 		4008C246201B6A3D00F089DB /* MDFBidiTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDFBidiTests.m; path = Tests/MDFBidiTests.m; sourceTree = "<group>"; };
 		4043BA12201B68CA00067BBC /* ZZZBidi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZZZBidi.m; path = Sources/ZZZBidi.m; sourceTree = "<group>"; };
 		4043BA13201B68CA00067BBC /* ZZZBidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZZZBidi.h; path = Sources/ZZZBidi.h; sourceTree = "<group>"; };
+		404B29FD20F5631800FA5DB0 /* NSLocale+MaterialRTL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSLocale+MaterialRTL.m"; path = "Sources/NSLocale+MaterialRTL.m"; sourceTree = "<group>"; };
+		404B29FE20F5631800FA5DB0 /* NSLocale+MaterialRTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSLocale+MaterialRTL.h"; path = "Sources/NSLocale+MaterialRTL.h"; sourceTree = "<group>"; };
 		405E9FD31FFC894A005FA14D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		407431D3201A67000031D58A /* NSString+MaterialBidi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSString+MaterialBidi.h"; path = "Sources/NSString+MaterialBidi.h"; sourceTree = "<group>"; };
 		407431D4201A67000031D58A /* NSString+MaterialBidi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSString+MaterialBidi.m"; path = "Sources/NSString+MaterialBidi.m"; sourceTree = "<group>"; };
@@ -57,8 +59,6 @@
 		4096E5DD1D78CBE700389ECD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		4096E5DE1D78CBE700389ECD /* MDFInternationalizationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDFInternationalizationTests.m; path = Tests/MDFInternationalizationTests.m; sourceTree = "<group>"; };
 		4096E5E51D78E02600389ECD /* MDFRTLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDFRTLTests.m; path = Tests/MDFRTLTests.m; sourceTree = "<group>"; };
-		40C7275520D864CE001F2162 /* NSLocale+MaterialRTL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSLocale+MaterialRTL.m"; path = "Sources/NSLocale+MaterialRTL.m"; sourceTree = "<group>"; };
-		40C7275620D864CE001F2162 /* NSLocale+MaterialRTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSLocale+MaterialRTL.h"; path = "Sources/NSLocale+MaterialRTL.h"; sourceTree = "<group>"; };
 		40F838321F50D7A500DE0781 /* MDFInternationalization.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MDFInternationalization.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,8 +109,8 @@
 				4096E5CC1D78CBD400389ECD /* MDFInternationalization.h */,
 				4096E5CE1D78CBD400389ECD /* MDFRTL.h */,
 				4096E5CF1D78CBD400389ECD /* MDFRTL.m */,
-				40C7275620D864CE001F2162 /* NSLocale+MaterialRTL.h */,
-				40C7275520D864CE001F2162 /* NSLocale+MaterialRTL.m */,
+				404B29FE20F5631800FA5DB0 /* NSLocale+MaterialRTL.h */,
+				404B29FD20F5631800FA5DB0 /* NSLocale+MaterialRTL.m */,
 				407431D3201A67000031D58A /* NSString+MaterialBidi.h */,
 				407431D4201A67000031D58A /* NSString+MaterialBidi.m */,
 				4096E5D01D78CBD400389ECD /* UIImage+MaterialRTL.h */,
@@ -158,7 +158,7 @@
 			files = (
 				4096E5D71D78CBD400389ECD /* MDFRTL.h in Headers */,
 				4096E5DB1D78CBD400389ECD /* UIView+MaterialRTL.h in Headers */,
-				40C7275820D864CF001F2162 /* NSLocale+MaterialRTL.h in Headers */,
+				404B2A0020F5631800FA5DB0 /* NSLocale+MaterialRTL.h in Headers */,
 				4043BA15201B68CA00067BBC /* ZZZBidi.h in Headers */,
 				407431D5201A67000031D58A /* NSString+MaterialBidi.h in Headers */,
 				4096E5D91D78CBD400389ECD /* UIImage+MaterialRTL.h in Headers */,
@@ -263,7 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40C7275720D864CF001F2162 /* NSLocale+MaterialRTL.m in Sources */,
+				404B29FF20F5631800FA5DB0 /* NSLocale+MaterialRTL.m in Sources */,
 				407431D6201A67000031D58A /* NSString+MaterialBidi.m in Sources */,
 				4043BA14201B68CA00067BBC /* ZZZBidi.m in Sources */,
 				4096E5D81D78CBD400389ECD /* MDFRTL.m in Sources */,

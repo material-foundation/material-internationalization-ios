@@ -21,7 +21,7 @@
 @implementation NSString (MaterialBidi)
 
 // https://www.w3.org/International/questions/qa-bidi-unicode-controls
-// TODO : Reach out to AAA about the utility of the Isolate markers
+//TODO: Reach out to AAA about the utility of the Isolate markers
 // ??? Do we want Embedding or Isolate markers? w3 recommends isolate?
 // Add reference : Unicode® Standard Annex #9 UNICODE BIDIRECTIONAL ALGORITHM
 // go/android-bidiformatter
