@@ -1,5 +1,5 @@
 /*
- Copyright 2016-present Google Inc. All Rights Reserved.
+ Copyright 2018-present Google Inc. All Rights Reserved.
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -14,24 +14,24 @@
  limitations under the License.
  */
 
-#import <XCTest/XCTest.h>
+#import <Foundation/Foundation.h>
 
-//FIXME: Remove this file if there are no tests
+//TODO:(IEG) Docs
 
-@interface MDFInternationalizationTests : XCTestCase
+@interface NSLocale (MaterialRTL)
 
-@end
+/**
+ Is the direction of the current locale's default language Left-To-Right?
 
-@implementation MDFInternationalizationTests
+ @return YES if the language is LTR, NO if the language is any other direction.
+ */
++ (BOOL)mdf_isDefaultLanguageLTR;
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
+/**
+ Is the direction of the current locale's default language Right-To-Left?
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
+ @return YES if the language is RTL, NO if the language is any other direction.
+ */
++ (BOOL)mdf_isDefaultLanguageRTL;
 
 @end

@@ -21,6 +21,7 @@
 		40CFE6791D82047100745882 /* Countries.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40CFE67B1D82047100745882 /* Countries.strings */; };
 		40CFE67E1D820EC800745882 /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CFE67D1D820EC800745882 /* Flags.xcassets */; };
 		40E3986B1D9DAFAB007F01DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40E3986D1D9DAFAB007F01DE /* InfoPlist.strings */; };
+		40F9EF0E20DC5FB300F761C2 /* BidirectionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40F9EF0D20DC5FB300F761C2 /* BidirectionalViewController.m */; };
 		40FE8A9B1D9AC719000A2A57 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE8A9A1D9AC719000A2A57 /* InformationViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,8 @@
 		40E3986C1D9DAFAB007F01DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40E3986E1D9DAFAD007F01DE /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40E3A2551DBEC54700C8B4CC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		40F9EF0C20DC5FB300F761C2 /* BidirectionalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidirectionalViewController.h; sourceTree = "<group>"; };
+		40F9EF0D20DC5FB300F761C2 /* BidirectionalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidirectionalViewController.m; sourceTree = "<group>"; };
 		40FE8A991D9AC719000A2A57 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		40FE8A9A1D9AC719000A2A57 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +134,8 @@
 			children = (
 				4096E62C1D78ED7600389ECD /* AppDelegate.h */,
 				4096E62D1D78ED7600389ECD /* AppDelegate.m */,
+				40F9EF0C20DC5FB300F761C2 /* BidirectionalViewController.h */,
+				40F9EF0D20DC5FB300F761C2 /* BidirectionalViewController.m */,
 				40CFE6711D82017200745882 /* CountryCell.h */,
 				40CFE6721D82017200745882 /* CountryCell.m */,
 				40CFE6741D82018D00745882 /* CountryTableViewController.h */,
@@ -288,6 +293,7 @@
 				40CFE6731D82017200745882 /* CountryCell.m in Sources */,
 				4096E62E1D78ED7600389ECD /* AppDelegate.m in Sources */,
 				40CFE6761D82018D00745882 /* CountryTableViewController.m in Sources */,
+				40F9EF0E20DC5FB300F761C2 /* BidirectionalViewController.m in Sources */,
 				4096E62B1D78ED7600389ECD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
