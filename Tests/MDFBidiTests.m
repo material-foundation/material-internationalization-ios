@@ -36,6 +36,13 @@
     [super tearDown];
 }
 
+- (void)testUniqueLocaleDirectionality {
+    BOOL isLTR = [NSLocale mdf_isDefaultLanguageLTR];
+    BOOL isRTL = [NSLocale mdf_isDefaultLanguageRTL];
+    
+    XCTAssertTrue(isLTR != isRTL, @"Locale cannot be LTR and RTL at the same time");
+}
+
 - (void)testLTRStringDirection {
   NSString *testString = @"The quick brown fox jumps over the lazy dog.";
   NSLocaleLanguageDirection MDFResult = [testString mdf_calculatedLanguageDirection];
