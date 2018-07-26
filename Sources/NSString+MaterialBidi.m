@@ -100,7 +100,6 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
 
 - (nonnull NSString *)mdf_stringWithStereoIsolate:(NSLocaleLanguageDirection)direction
                                           context:(NSLocaleLanguageDirection)contextDirection {
-  // ??? Assert or exception - Assert!!!!
 #if DEBUG
   // Disable in release, as a pre-caution in case not everyone defines NS_BLOCK_ASSERTION.
   NSCAssert((contextDirection != NSLocaleLanguageDirectionLeftToRight ||
@@ -114,7 +113,6 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
             @"stringToBeInsertedDirection must be set to either NSLocaleLanguageDirectionUnknown,"
             "NSLocaleLanguageDirectionLeftToRight, or NSLocaleLanguageDirectionRightToLeft.");
 #endif
-  //TODO Add proper error handling
 
   if (self.length == 0) {
     return [self copy];
