@@ -42,17 +42,16 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
 
 - (NSLocaleLanguageDirection)mdf_calculatedLanguageDirection {
   // Attempt to determine language of string.
+  NSLocaleLanguageDirection languageDirection = NSLocaleLanguageDirectionUnknown;
+
+  // Pass string into CoreFoundation's language identifier
   CFStringRef text = (__bridge CFStringRef)self;
   CFRange range = CFRangeMake(0, [self length]);
   NSString *languageCode =
       (NSString *)CFBridgingRelease(CFStringTokenizerCopyBestStringLanguage(text, range));
-
-  NSLocaleLanguageDirection languageDirection;
   if (languageCode) {
     // If we identified a language, explicitly set the string direction based on that
     languageDirection = [NSLocale characterDirectionForLanguage:languageCode];
-  } else {
-    languageDirection = NSLocaleLanguageDirectionUnknown;
   }
 
   // If the result is not LTR or RTL, fallback to LTR
@@ -73,26 +72,10 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
 
 - (NSString *)mdf_stringWithBidiMarkers:(NSLocaleLanguageDirection)languageDirection {
   if (languageDirection == NSLocaleLanguageDirectionRightToLeft) {
-    // ??? Should we check for existing markers - MAYBE, must be exact requested markers
-    // ??? AAA: why / why not?  Would you ever want to double wrap?  What other optimizations
-    // might present themselves
-    // TODO If so only check the first and last character
-    // TODO Here and below
-    if ([self rangeOfString:kMDFRTLEmbedding options:0 range:NSMakeRange(0, 1)].location == NSNotFound ||
-        [self rangeOfString:kMDFBidiPopEmbedding options:NSBackwardsSearch].location == NSNotFound) {
-      NSString *directionString =
-          [NSString stringWithFormat:@"%@%@%@", kMDFRTLEmbedding, self, kMDFBidiPopEmbedding];
-      return directionString;
-    } else {
-      return [self copy];
-    }
+    return [NSString stringWithFormat:@"%@%@%@", kMDFRTLEmbedding, self, kMDFBidiPopEmbedding];
   } else if (languageDirection == NSLocaleLanguageDirectionLeftToRight) {
-    //TODO Check for existing markers
-    NSString *directionString =
-        [NSString stringWithFormat:@"%@%@%@", kMDFLTREmbedding, self, kMDFBidiPopEmbedding];
-    return directionString;
+    return [NSString stringWithFormat:@"%@%@%@", kMDFLTREmbedding, self, kMDFBidiPopEmbedding];
   } else {
-    // ??? Originally this just returned self.  Do we want to return a copy?
     // Return a copy original string if an unsupported direction is passed in.
     return [self copy];
   }

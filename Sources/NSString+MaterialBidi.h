@@ -42,7 +42,7 @@
  RLE+|string|+PDF for RTL text, or LRE+|string|+PDF for LTR text.
 
  @returns the new string.
-*/
+ */
 - (nonnull NSString *)mdf_stringWithBidiMarkers:(NSLocaleLanguageDirection)languageDirection;
 
 /**

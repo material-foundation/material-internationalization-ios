@@ -113,18 +113,6 @@
   XCTAssertTrue([wrappedString isEqualToString:testZZZString]);
 }
 
-- (void)testAddRTLRTLMarkers {
-  NSString *testString = @"quick brown fox";
-  NSString *wrappedString =
-      [testString mdf_stringWithBidiMarkers:NSLocaleLanguageDirectionRightToLeft];
-  XCTAssertTrue([wrappedString isEqualToString:@"\u202bquick brown fox\u202c"]);
-
-  NSString *doubleWrappedString =
-      [wrappedString mdf_stringWithBidiMarkers:NSLocaleLanguageDirectionRightToLeft];
-  XCTAssertTrue([doubleWrappedString isEqualToString:@"\u202bquick brown fox\u202c"]);
-}
-
-
 - (void)testAddCalculatedMarkers {
   NSString *testString = @"The quick brown fox jumps over the lazy dog.";
   NSString *wrappedString =
