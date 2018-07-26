@@ -16,12 +16,8 @@
 
 #import <Foundation/Foundation.h>
 
-//TODO Swift annotations
-//TODO Clean up method docs
-
 @interface NSString (MaterialBidi)
 
-// ??? Fallback to LTR if result is not LTR || RTL?  (Unknown, Top to Bottom, etc.)
 /**
  Uses CFStringTokenizerCopyBestStringLanguage to determine string's language direction.
  If the language direction is unknown or vertical returns left-to-right.
@@ -77,8 +73,6 @@
 - (nonnull NSString *)mdf_stringWithStereoIsolate:(NSLocaleLanguageDirection)direction
                                           context:(NSLocaleLanguageDirection)contextDirection;
 
-// ??? Do we want to strip all or only the markers at the ends of the strings
-// !!! I've added the Isolate markers to the original GOOBidi list
 /**
  Returns a new string in which all occurrences of Unicode bidirectional format markers are removed.
 

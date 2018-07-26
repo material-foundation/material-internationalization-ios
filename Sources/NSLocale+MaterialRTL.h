@@ -16,8 +16,6 @@
 
 #import <Foundation/Foundation.h>
 
-//TODO:(IEG) Docs
-
 @interface NSLocale (MaterialRTL)
 
 /**
@@ -35,3 +33,4 @@
 + (BOOL)mdf_isDefaultLanguageRTL;
 
 @end
+
