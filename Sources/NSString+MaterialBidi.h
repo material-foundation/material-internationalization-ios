@@ -31,7 +31,8 @@
 
 /**
  Initializes a copy of the string tagged with the given language direction. This
- formatting adds the appropriate Unicode markers at the beginning and end of the string.
+ formatting adds the appropriate Unicode embedding characters at the beginning and end of the
+ string.
 
  Only NSLocaleLanguageDirectionLeftToRight and NSLocaleLanguageDirectionRightToLeft
  language directions are supported. Other values of NSLocalLanguageDirection will
@@ -43,35 +44,35 @@
 
  @returns the new string.
  */
-- (nonnull NSString *)mdf_stringWithBidiMarkers:(NSLocaleLanguageDirection)languageDirection;
+- (nonnull NSString *)mdf_stringWithBidiEmbedding:(NSLocaleLanguageDirection)languageDirection;
 
 /**
  Returns a copy of the string explicitly tagged with a language direction.
 
  Uses mdf_calculatedLanguageDirection to determine string's language direction then invokes
- mdf_stringWithBiDiMarkers:.
+ mdf_stringWithBidiEmbedding:.
 
  @return the new string.
  */
-- (nonnull NSString *)mdf_stringWithBidiMarkers NS_SWIFT_NAME(stringWithBidi());
+- (nonnull NSString *)mdf_stringWithBidiEmbedding;
 
 /**
- This method will always isolate the string by adding LRM and RLM marks before and after the
- string to prevent it from garbling the content around it. Use this method when inserting output
- string into another format string.
+ This method will wrap the string in embedding (LRE/RLE and PDF) characters, based on the string
+ direction and additionally wrapping the string in marks (LRM and RLM) if the string's direction
+ is different from the context direction.
 
  |direction| can be NSLocaleLanguageDirectionLeftToRight, NSLocaleLanguageDirectionRightToLeft, or
- NSLocaleLanguageDirectionUnknown.
+ NSLocaleLanguageDirectionUnknown. If NSLocaleLanguageDirectionUnknown, the direction of the string
+ will be calculated with mdf_calculatedLanguageDirection.
 
  |contextDirection| must be specificed and cannot be unknown. Only
  NSLocaleLanguageDirectionLeftToRight and NSLocaleLanguageDirectionRightToLeft language directions
- are supported. Use mdf_calculatedLanguageDirection to estimate the string if directionality is
- unknown.
+ are supported.
 
  @returns the new string.
  */
-- (nonnull NSString *)mdf_stringWithStereoIsolate:(NSLocaleLanguageDirection)direction
-                                          context:(NSLocaleLanguageDirection)contextDirection;
+- (nonnull NSString *)mdf_stringWithStereoReset:(NSLocaleLanguageDirection)direction
+                                        context:(NSLocaleLanguageDirection)contextDirection;
 
 /**
  Returns a new string in which all occurrences of Unicode bidirectional format markers are removed.

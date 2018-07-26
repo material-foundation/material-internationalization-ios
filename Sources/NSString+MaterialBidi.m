@@ -81,13 +81,13 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
   return languageDirection;
 }
 
-- (NSString *)mdf_stringWithBidiMarkers {
+- (NSString *)mdf_stringWithBidiEmbedding {
   NSLocaleLanguageDirection languageDirection = [self mdf_calculatedLanguageDirection];
 
-  return [self mdf_stringWithBidiMarkers:languageDirection];
+  return [self mdf_stringWithBidiEmbedding:languageDirection];
 }
 
-- (NSString *)mdf_stringWithBidiMarkers:(NSLocaleLanguageDirection)languageDirection {
+- (NSString *)mdf_stringWithBidiEmbedding:(NSLocaleLanguageDirection)languageDirection {
   if (languageDirection == NSLocaleLanguageDirectionRightToLeft) {
     return [NSString stringWithFormat:@"%@%@%@", kMDFRTLEmbedding, self, kMDFPopFormatting];
   } else if (languageDirection == NSLocaleLanguageDirectionLeftToRight) {
@@ -98,7 +98,7 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
   }
 }
 
-- (nonnull NSString *)mdf_stringWithStereoIsolate:(NSLocaleLanguageDirection)direction
+- (nonnull NSString *)mdf_stringWithStereoReset:(NSLocaleLanguageDirection)direction
                                           context:(NSLocaleLanguageDirection)contextDirection {
 #if DEBUG
   // Disable in release, as a pre-caution in case not everyone defines NS_BLOCK_ASSERTION.
@@ -123,17 +123,22 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
     direction = [self mdf_calculatedLanguageDirection];
   }
 
-  NSString *wrappedString = [self mdf_stringWithBidiMarkers:direction];
+  NSString *bidiEmbeddedString = [self mdf_stringWithBidiEmbedding:direction];
 
+  NSString *bidiResetString;
   if (direction != contextDirection) {
     if (contextDirection == NSLocaleLanguageDirectionRightToLeft) {
-      return [NSString stringWithFormat:@"%@%@%@", kMDFRTLMark, wrappedString, kMDFRTLMark];
+      bidiResetString =
+          [NSString stringWithFormat:@"%@%@%@", kMDFRTLMark, bidiEmbeddedString, kMDFRTLMark];
     } else {
-      return [NSString stringWithFormat:@"%@%@%@", kMDFLTRMark, wrappedString, kMDFLTRMark];
+      bidiResetString =
+          [NSString stringWithFormat:@"%@%@%@", kMDFLTRMark, bidiEmbeddedString, kMDFLTRMark];
     }
   } else {
-    return wrappedString;
+    bidiResetString = bidiEmbeddedString;
   }
+
+  return bidiResetString;
 }
 
 - (NSString *)mdf_stringWithBidiMarkersStripped {
