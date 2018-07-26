@@ -1,5 +1,5 @@
 /*
- Copyright 2016-present Google Inc. All Rights Reserved.
+ Copyright 2018-present Google Inc. All Rights Reserved.
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -14,24 +14,8 @@
  limitations under the License.
  */
 
-#import <XCTest/XCTest.h>
+#import <UIKit/UIKit.h>
 
-//FIXME: Remove this file if there are no tests
-
-@interface MDFInternationalizationTests : XCTestCase
-
-@end
-
-@implementation MDFInternationalizationTests
-
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
+@interface BidirectionalViewController : UIViewController
 
 @end
