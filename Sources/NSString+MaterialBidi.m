@@ -26,17 +26,34 @@
 // Add reference : Unicode® Standard Annex #9 UNICODE BIDIRECTIONAL ALGORITHM
 // go/android-bidiformatter
 // http://unicode.org/reports/tr9/
-static NSString *kMDFLTREmbedding = @"\u202a";  // left-to-right embedding
-static NSString *kMDFRTLEmbedding = @"\u202b";  // right-to-left embedding
-static NSString *kMDFBidiPopEmbedding = @"\u202c";  // pop directional embedding
 
+// Mark influences the directionality of neutral characters when the context is opposite of the
+// neutral chatacter's desired directionality.
 static NSString *kMDFLTRMark = @"\u200e";  // left-to-right mark
 static NSString *kMDFRTLMark = @"\u200f";  // right-to-left mark
 
+// Embedding indicates a text segment is embedded in a larger context with the opposite
+// directionality.
+static NSString *kMDFLTREmbedding = @"\u202a";  // left-to-right embedding
+static NSString *kMDFRTLEmbedding = @"\u202b";  // right-to-left embedding
+
+// Override reverses the directionality of strongly LTR or RTL characters
+static NSString *kMDFLTROverride = @"\u202d";  // left-to-right override
+static NSString *kMDFRTLOverride = @"\u202e";  // right-to-left override
+
+// Pop is used to denote the end of an embedding or override text segment
+static NSString *kMDFPopFormatting = @"\u202c";  // pop directional formatting
+
+// Version 6.3.0 Bidi algorithm additions
 // The following only work on iOS 10+
+
+// Isolate indicates that the text segment has an internal directionality with no effect on
+// surrounding characters.
 static NSString *kMDFLTRIsolate = @"\u2066";  // left-to-right isolate
 static NSString *kMDFRTLIsolate = @"\u2067";  // right-to-left isolate
 static NSString *kMDFFirstStrongIsolate = @"\u2068";  // first strong isolate
+
+// Pop Isolate is used to denote the end of an isolate text segment
 static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
 
 
@@ -72,9 +89,9 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
 
 - (NSString *)mdf_stringWithBidiMarkers:(NSLocaleLanguageDirection)languageDirection {
   if (languageDirection == NSLocaleLanguageDirectionRightToLeft) {
-    return [NSString stringWithFormat:@"%@%@%@", kMDFRTLEmbedding, self, kMDFBidiPopEmbedding];
+    return [NSString stringWithFormat:@"%@%@%@", kMDFRTLEmbedding, self, kMDFPopFormatting];
   } else if (languageDirection == NSLocaleLanguageDirectionLeftToRight) {
-    return [NSString stringWithFormat:@"%@%@%@", kMDFLTREmbedding, self, kMDFBidiPopEmbedding];
+    return [NSString stringWithFormat:@"%@%@%@", kMDFLTREmbedding, self, kMDFPopFormatting];
   } else {
     // Return a copy original string if an unsupported direction is passed in.
     return [self copy];
@@ -121,15 +138,18 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
 
 - (NSString *)mdf_stringWithBidiMarkersStripped {
   NSString *strippedString = self;
-  NSArray <NSString *>*directionalMarkers = @[ kMDFRTLEmbedding,
+  NSArray <NSString *>*directionalMarkers = @[ kMDFLTRMark,
+                                               kMDFRTLMark,
+                                               kMDFRTLEmbedding,
                                                kMDFLTREmbedding,
-                                               kMDFBidiPopEmbedding,
+                                               kMDFRTLOverride,
+                                               kMDFLTROverride,
+                                               kMDFPopFormatting,
                                                kMDFLTRIsolate,
                                                kMDFRTLIsolate,
                                                kMDFFirstStrongIsolate,
-                                               kMDFPopIsolate,
-                                               kMDFLTRMark,
-                                               kMDFRTLMark ];
+                                               kMDFPopIsolate
+                                               ];
   for (NSString *markerString in directionalMarkers) {
     strippedString =
         [strippedString stringByReplacingOccurrencesOfString:markerString withString:@""];
