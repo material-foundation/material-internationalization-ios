@@ -59,8 +59,14 @@
   XCTAssertEqual(MDFResult, ZZZResult);
 }
 
-- (void)testRTLStringDirection {
+- (void)testPersoArabicRTLStringDirection {
   NSString *testString = @"الثعلب البني السريع يقفز فوق الكلب الكسول";
+  NSLocaleLanguageDirection MDFResult = [testString mdf_calculatedLanguageDirection];
+  XCTAssertEqual(MDFResult, NSLocaleLanguageDirectionRightToLeft);
+}
+
+- (void)testHebrewRTLStringDirection {
+  NSString *testString = @"12 ספרים";
   NSLocaleLanguageDirection MDFResult = [testString mdf_calculatedLanguageDirection];
   XCTAssertEqual(MDFResult, NSLocaleLanguageDirectionRightToLeft);
 }
@@ -78,14 +84,14 @@
 - (void)testAddLTRMarkers {
   NSString *testString = @"quick brown fox";
   NSString *wrappedString =
-      [testString mdf_stringWithBidiMarkers:NSLocaleLanguageDirectionLeftToRight];
+      [testString mdf_stringWithBidiEmbedding:NSLocaleLanguageDirectionLeftToRight];
   XCTAssertTrue([wrappedString isEqualToString:@"\u202aquick brown fox\u202c"]);
 }
 
 - (void)testZZZAddLTRMarkers {
   NSString *testString = @"quick brown fox";
   NSString *wrappedString =
-  [testString mdf_stringWithBidiMarkers:NSLocaleLanguageDirectionLeftToRight];
+  [testString mdf_stringWithBidiEmbedding:NSLocaleLanguageDirectionLeftToRight];
   XCTAssertTrue([wrappedString isEqualToString:@"\u202aquick brown fox\u202c"]);
 
   // KM
@@ -97,14 +103,14 @@
 - (void)testAddRTLMarkers {
   NSString *testString = @"quick brown fox";
   NSString *wrappedString =
-      [testString mdf_stringWithBidiMarkers:NSLocaleLanguageDirectionRightToLeft];
+      [testString mdf_stringWithBidiEmbedding:NSLocaleLanguageDirectionRightToLeft];
   XCTAssertTrue([wrappedString isEqualToString:@"\u202bquick brown fox\u202c"]);
 }
 
 - (void)testZZZAddRTLMarkers {
   NSString *testString = @"quick brown fox";
   NSString *wrappedString =
-  [testString mdf_stringWithBidiMarkers:NSLocaleLanguageDirectionRightToLeft];
+  [testString mdf_stringWithBidiEmbedding:NSLocaleLanguageDirectionRightToLeft];
   XCTAssertTrue([wrappedString isEqualToString:@"\u202bquick brown fox\u202c"]);
 
   // KM
@@ -116,14 +122,14 @@
 - (void)testAddCalculatedMarkers {
   NSString *testString = @"The quick brown fox jumps over the lazy dog.";
   NSString *wrappedString =
-      [testString mdf_stringWithBidiMarkers];
+      [testString mdf_stringWithBidiEmbedding];
   XCTAssertTrue([wrappedString isEqualToString:@"\u202aThe quick brown fox jumps over the lazy dog.\u202c"]);
 }
 
 - (void)testZZZAddCalculatedMarkers {
   NSString *testString = @"The quick brown fox jumps over the lazy dog.";
   NSString *wrappedString =
-  [testString mdf_stringWithBidiMarkers];
+  [testString mdf_stringWithBidiEmbedding];
   XCTAssertTrue([wrappedString isEqualToString:@"\u202aThe quick brown fox jumps over the lazy dog.\u202c"]);
 
   // KM
@@ -154,8 +160,8 @@
   NSLocaleLanguageDirection contextDirection = NSLocaleLanguageDirectionLeftToRight;
 
   NSString *wrappedString =
-      [testString mdf_stringWithStereoIsolate:stringDirection
-                                        context:contextDirection];
+      [testString mdf_stringWithStereoReset:stringDirection
+                                    context:contextDirection];
 
   // ??? Since the context is the same as the string, do we need the markers
   XCTAssertTrue([wrappedString isEqualToString:@"\u202aThe quick brown fox jumps over the lazy dog.\u202c"]);
@@ -167,8 +173,8 @@
   NSLocaleLanguageDirection contextDirection = NSLocaleLanguageDirectionLeftToRight;
 
   NSString *wrappedString =
-      [testString mdf_stringWithStereoIsolate:stringDirection
-                                      context:contextDirection];
+      [testString mdf_stringWithStereoReset:stringDirection
+                                    context:contextDirection];
 
   NSString *testZZZString = ZZZBidiUnicodeWrapWithStereoReset(testString, stringDirection, contextDirection);
   XCTAssertTrue([wrappedString isEqualToString:testZZZString]);
@@ -180,8 +186,8 @@
   NSLocaleLanguageDirection contextDirection = NSLocaleLanguageDirectionRightToLeft;
 
   NSString *wrappedString =
-  [testString mdf_stringWithStereoIsolate:stringDirection
-                                  context:contextDirection];
+  [testString mdf_stringWithStereoReset:stringDirection
+                                context:contextDirection];
 
   // !!! wrappedString is "\u202b\u202aThe quick brown fox jumps over the lazy dog.\u202c\u202c
   // ??? Since the context is the same as the string, do we need the markers
@@ -194,8 +200,8 @@
   NSLocaleLanguageDirection contextDirection = NSLocaleLanguageDirectionRightToLeft;
 
   NSString *wrappedString =
-  [testString mdf_stringWithStereoIsolate:stringDirection
-                                  context:contextDirection];
+  [testString mdf_stringWithStereoReset:stringDirection
+                                context:contextDirection];
 
   // !!! wrappedString is "\u202b\u202aThe quick brown fox jumps over the lazy dog.\u202c\u202c
   // !!! testZZZString is "\u200f\u202aThe quick brown fox jumps over the lazy dog.\u202c\u200f
@@ -210,8 +216,8 @@
   NSLocaleLanguageDirection contextDirection = NSLocaleLanguageDirectionRightToLeft;
 
   NSString *wrappedString =
-  [testString mdf_stringWithStereoIsolate:stringDirection
-                                  context:contextDirection];
+  [testString mdf_stringWithStereoReset:stringDirection
+                                context:contextDirection];
 
   // !!! wrappedString is "\u202b\u202aThe quick brown fox jumps over the lazy dog.\u202c\u202c
   // ??? Since the context is the same as the string, do we need the markers
@@ -224,24 +230,14 @@
   NSLocaleLanguageDirection contextDirection = NSLocaleLanguageDirectionRightToLeft;
 
   NSString *wrappedString =
-  [testString mdf_stringWithStereoIsolate:stringDirection
-                                  context:contextDirection];
+  [testString mdf_stringWithStereoReset:stringDirection
+                                context:contextDirection];
 
   // !!! wrappedString is "\u202b\u202aThe quick brown fox jumps over the lazy dog.\u202c\u202c
   // !!! testZZZString is "\u200f\u202aThe quick brown fox jumps over the lazy dog.\u202c\u200f
 
   NSString *testZZZString = ZZZBidiUnicodeWrapWithStereoReset(testString, stringDirection, contextDirection);
   XCTAssertTrue([wrappedString isEqualToString:testZZZString]);
-}
-
-//KM
-- (void)testStandardStringBehavior {
-  NSString *string = @"the quick brown fox";
-  // This indicates it will return a new string, but it does not
-  NSString *strippedString = [string stringByReplacingOccurrencesOfString:@"zebra" withString:@"antelope"];
-
-  XCTAssertTrue([string isEqualToString:strippedString]);
-  XCTAssertEqual(string, strippedString);
 }
 
 // Previous ZZZBidiTests
@@ -288,8 +284,8 @@
 
   //  NSString *wrappedText = [rtlText mdf_stringWithBidiMarkers:NSLocaleLanguageDirectionRightToLeft];
   NSString *wrappedText =
-      [rtlText mdf_stringWithStereoIsolate:NSLocaleLanguageDirectionRightToLeft
-                                   context:NSLocaleLanguageDirectionLeftToRight];
+      [rtlText mdf_stringWithStereoReset:NSLocaleLanguageDirectionRightToLeft
+                                 context:NSLocaleLanguageDirectionLeftToRight];
   NSString *testString = [NSString stringWithFormat:@"Hello %@! (19 July)", wrappedText];
   // @"Hello اميل! (19 July)"
 
