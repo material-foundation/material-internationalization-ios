@@ -45,4 +45,3 @@ script:
   - set -o pipefail
   - echo xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" test
   - xcodebuild -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" test | xcpretty
-

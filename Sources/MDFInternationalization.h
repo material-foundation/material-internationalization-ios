@@ -17,6 +17,8 @@
 #import <UIKit/UIKit.h>
 
 #import <MDFInternationalization/MDFRTL.h>
+#import <MDFInternationalization/NSLocale+MaterialRTL.h>
+#import <MDFInternationalization/NSString+MaterialBidi.h>
 #import <MDFInternationalization/UIImage+MaterialRTL.h>
 #import <MDFInternationalization/UIView+MaterialRTL.h>
 
