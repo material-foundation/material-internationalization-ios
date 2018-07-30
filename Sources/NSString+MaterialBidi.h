@@ -65,7 +65,7 @@
  NSLocaleLanguageDirectionUnknown. If NSLocaleLanguageDirectionUnknown, the direction of the string
  will be calculated with mdf_calculatedLanguageDirection.
 
- |contextDirection| must be specificed and cannot be unknown. Only
+ |contextDirection| must be specified and cannot be unknown. Only
  NSLocaleLanguageDirectionLeftToRight and NSLocaleLanguageDirectionRightToLeft language directions
  are supported.
 

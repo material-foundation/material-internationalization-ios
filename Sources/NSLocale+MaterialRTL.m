@@ -21,7 +21,7 @@
 + (BOOL)mdf_isDefaultLanguageLTR {
   NSString *languageCode = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
   NSLocaleLanguageDirection characterDirection =
-  [NSLocale characterDirectionForLanguage:languageCode];
+      [NSLocale characterDirectionForLanguage:languageCode];
   BOOL localeLanguageDirectionIsLTR = (characterDirection == NSLocaleLanguageDirectionLeftToRight);
   return localeLanguageDirectionIsLTR;
 }
@@ -29,7 +29,7 @@
 + (BOOL)mdf_isDefaultLanguageRTL {
   NSString *languageCode = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
   NSLocaleLanguageDirection characterDirection =
-  [NSLocale characterDirectionForLanguage:languageCode];
+      [NSLocale characterDirectionForLanguage:languageCode];
   BOOL localeLanguageDirectionIsRTL = (characterDirection == NSLocaleLanguageDirectionRightToLeft);
   return localeLanguageDirectionIsRTL;
 }
