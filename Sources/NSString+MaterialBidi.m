@@ -63,7 +63,7 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
 
   // Pass string into CoreFoundation's language identifier
   CFStringRef text = (__bridge CFStringRef)self;
-  CFRange range = CFRangeMake(0, [self length]);
+  CFRange range = CFRangeMake(0, (CFIndex)[self length]);
   NSString *languageCode =
       (NSString *)CFBridgingRelease(CFStringTokenizerCopyBestStringLanguage(text, range));
   if (languageCode) {
