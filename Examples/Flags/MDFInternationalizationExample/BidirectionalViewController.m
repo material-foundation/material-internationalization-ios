@@ -16,6 +16,8 @@
 
 #import "BidirectionalViewController.h"
 
+#import <MDFInternationalization/MDFInternationalization.h>
+
 
 static NSString *LTREmbedding = @"\u202a";  // left-to-right embedding
 static NSString *RTLEmbedding = @"\u202b";  // right-to-left embedding
@@ -37,6 +39,7 @@ static NSString *PopIsolate = @"\u2069";  // pop directional isolate
 @property (weak, nonatomic) IBOutlet UILabel *labelTwo;
 @property (weak, nonatomic) IBOutlet UILabel *labelThree;
 @property (weak, nonatomic) IBOutlet UILabel *labelFour;
+@property (weak, nonatomic) IBOutlet UILabel *labelFive;
 
 @end
 
@@ -51,10 +54,27 @@ static NSString *PopIsolate = @"\u2069";  // pop directional isolate
   self.labelTwo.text =
       [NSString stringWithFormat:@"Bidi Embed supported %@)%@:", RTLEmbedding, BidiPopEmbedding];
 
-  NSString *three = [NSString stringWithFormat:@"Read %@15 books%@ EOL", FirstStrongIsolate, PopIsolate];
-  self.labelThree.text = three;
-  NSString *four = [NSString stringWithFormat:@"Read %@15 كتاب%@ EOL", FirstStrongIsolate, PopIsolate];
-  self.labelFour.text = four;
+  // Format a restaurant reservation as [Name] [Number of attendees] @ [time]
+  //  NSString *restaurantName = @"Cancun";  // Latin script
+  NSString *restaurantName = @"מסעדת מגדלנה במגדל";  // Hebrew script
+  NSInteger attendees = 4;
+  NSTimeInterval futureInterval = 60. * 112; // 60 seconds * 122 minutes
+  NSDate *reservationTime = [NSDate dateWithTimeIntervalSinceNow:futureInterval];
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  dateFormatter.dateStyle = NSDateFormatterNoStyle;
+  dateFormatter.timeStyle = NSDateFormatterShortStyle;
+  NSString *reservationTimeString = [dateFormatter stringFromDate:reservationTime];
+  
+  NSString *unwrappedString = [NSString stringWithFormat:@"%@ : %ld @ %@", restaurantName, attendees, reservationTimeString];
+  self.labelFour.text = unwrappedString;
+
+  // The same string after wrapping the name
+  NSString *wrappedRestaurantName =
+      [restaurantName mdf_stringWithStereoReset:NSLocaleLanguageDirectionRightToLeft
+                                        context:NSLocaleLanguageDirectionLeftToRight];
+  NSString *wrappedString = [NSString stringWithFormat:@"%@ : %ld @ %@", wrappedRestaurantName, attendees, reservationTimeString];
+  self.labelFive.text = wrappedString;
+  
 }
 
 @end

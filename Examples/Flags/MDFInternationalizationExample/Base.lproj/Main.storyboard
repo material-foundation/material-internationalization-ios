@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nTB-V6-IeR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nTB-V6-IeR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -268,14 +268,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="String3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="og3-26-wAO">
-                                <rect key="frame" x="16" y="115" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Reservation Name : Attendees @ Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="og3-26-wAO">
+                                <rect key="frame" x="16" y="115" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="String4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79b-J7-XX9">
-                                <rect key="frame" x="16" y="144" width="343" height="21"/>
+                                <rect key="frame" x="16" y="164" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="String5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nf-1A-Wx4">
+                                <rect key="frame" x="16" y="193" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -283,6 +289,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4Nf-1A-Wx4" secondAttribute="trailing" constant="16" id="0en-Dm-Dft"/>
                             <constraint firstItem="bp5-8y-tHt" firstAttribute="top" secondItem="HGr-VY-H9E" secondAttribute="bottom" constant="8" id="16f-QD-xRN"/>
                             <constraint firstItem="QUq-Mi-URf" firstAttribute="top" secondItem="Fsq-zA-DrK" secondAttribute="bottom" constant="8" id="2tn-ON-gNz"/>
                             <constraint firstAttribute="trailing" secondItem="QUq-Mi-URf" secondAttribute="trailing" constant="16" id="6fK-tl-ibs"/>
@@ -294,6 +301,8 @@
                             <constraint firstItem="79b-J7-XX9" firstAttribute="top" secondItem="og3-26-wAO" secondAttribute="bottom" constant="8" id="TYI-Jn-DTl"/>
                             <constraint firstItem="og3-26-wAO" firstAttribute="leading" secondItem="BlD-Io-a2Q" secondAttribute="leading" constant="16" id="W20-GF-dpM"/>
                             <constraint firstAttribute="trailing" secondItem="Fsq-zA-DrK" secondAttribute="trailing" constant="16" id="bFQ-Ip-E7x"/>
+                            <constraint firstItem="4Nf-1A-Wx4" firstAttribute="leading" secondItem="BlD-Io-a2Q" secondAttribute="leading" constant="16" id="hQ2-fG-jdE"/>
+                            <constraint firstItem="4Nf-1A-Wx4" firstAttribute="top" secondItem="79b-J7-XX9" secondAttribute="bottom" constant="8" id="rHW-wl-3eb"/>
                             <constraint firstItem="Fsq-zA-DrK" firstAttribute="top" secondItem="bp5-8y-tHt" secondAttribute="bottom" constant="8" id="tC4-KR-NTt"/>
                             <constraint firstAttribute="trailing" secondItem="bp5-8y-tHt" secondAttribute="trailing" constant="16" id="uLA-rj-Hkj"/>
                             <constraint firstItem="QUq-Mi-URf" firstAttribute="leading" secondItem="BlD-Io-a2Q" secondAttribute="leading" constant="16" id="v97-Tl-7hR"/>
@@ -302,6 +311,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Bidi" image="BidiIcon" id="n7g-2Z-4FQ"/>
                     <connections>
+                        <outlet property="labelFive" destination="4Nf-1A-Wx4" id="SX8-1h-slU"/>
                         <outlet property="labelFour" destination="79b-J7-XX9" id="nat-BJ-yx0"/>
                         <outlet property="labelOne" destination="Fsq-zA-DrK" id="j3W-NF-u0X"/>
                         <outlet property="labelThree" destination="og3-26-wAO" id="j68-bm-lwT"/>
@@ -310,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n08-nG-jjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="-230"/>
+            <point key="canvasLocation" x="960.79999999999995" y="-230.73463268365819"/>
         </scene>
         <!--Flags-->
         <scene sceneID="yxy-mE-Blg">
