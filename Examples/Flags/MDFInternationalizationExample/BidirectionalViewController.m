@@ -17,18 +17,18 @@
 #import "BidirectionalViewController.h"
 
 
-static NSString *kMDFLTREmbedding = @"\u202a";  // left-to-right embedding
-static NSString *kMDFRTLEmbedding = @"\u202b";  // right-to-left embedding
-static NSString *kMDFBidiPopEmbedding = @"\u202c";  // pop directional embedding
+static NSString *LTREmbedding = @"\u202a";  // left-to-right embedding
+static NSString *RTLEmbedding = @"\u202b";  // right-to-left embedding
+static NSString *BidiPopEmbedding = @"\u202c";  // pop directional embedding
 
-static NSString *kMDFLTRMark = @"\u200e";  // left-to-right mark
-static NSString *kMDFRTLMark = @"\u200f";  // right-to-left mark
+static NSString *LTRMark = @"\u200e";  // left-to-right mark
+static NSString *RTLMark = @"\u200f";  // right-to-left mark
 
 // The following only work on iOS 10+
-static NSString *kMDFLTRIsolate = @"\u2066";  // left-to-right isolate
-static NSString *kMDFRTLIsolate = @"\u2067";  // right-to-left isolate
-static NSString *kMDFFirstStrongIsolate = @"\u2068";  // first strong isolate
-static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
+static NSString *LTRIsolate = @"\u2066";  // left-to-right isolate
+static NSString *RTLIsolate = @"\u2067";  // right-to-left isolate
+static NSString *FirstStrongIsolate = @"\u2068";  // first strong isolate
+static NSString *PopIsolate = @"\u2069";  // pop directional isolate
 
 
 @interface BidirectionalViewController ()
@@ -43,35 +43,18 @@ static NSString *kMDFPopIsolate = @"\u2069";  // pop directional isolate
 @implementation BidirectionalViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+
   // The following lines will display a (: if the markers are supported, ): if not.
   self.labelOne.text =
-      [NSString stringWithFormat:@"Bidi Isolate supported %@)%@:", kMDFRTLIsolate, kMDFPopIsolate];
+      [NSString stringWithFormat:@"Bidi Isolate supported %@)%@:", RTLIsolate, PopIsolate];
   self.labelTwo.text =
-      [NSString stringWithFormat:@"Bidi Embed supported %@)%@:", kMDFRTLEmbedding, kMDFBidiPopEmbedding];
-//  self.labelThree.text = @"1st  a-\u2068.)\u200f\u2069-b";
-//  self.labelFour.text = @"1st  a-\u2068\u200f.)\u2069-b";
-//  self.labelFour.text = @"الو" // Hello
-  NSString *three = [NSString stringWithFormat:@"Read %@15 books%@ EOL", kMDFFirstStrongIsolate, kMDFPopIsolate];
+      [NSString stringWithFormat:@"Bidi Embed supported %@)%@:", RTLEmbedding, BidiPopEmbedding];
+
+  NSString *three = [NSString stringWithFormat:@"Read %@15 books%@ EOL", FirstStrongIsolate, PopIsolate];
   self.labelThree.text = three;
-  NSString *four = [NSString stringWithFormat:@"Read %@15 كتاب%@ EOL", kMDFFirstStrongIsolate, kMDFPopIsolate];
+  NSString *four = [NSString stringWithFormat:@"Read %@15 كتاب%@ EOL", FirstStrongIsolate, PopIsolate];
   self.labelFour.text = four;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
