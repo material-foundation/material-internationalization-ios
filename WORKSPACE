@@ -12,14 +12,41 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+#git_repository(
+#    name = "io_bazel",
+#    remote = "https://github.com/bazelbuild/bazel.git",
+#    tag = "0.14.0",
+#)
+
+
+
+git_repository(
+    name = "com_github_bazelbuild_buildtools",
+    remote = "https://github.com/bazelbuild/buildtools.git",
+    tag = "0.11.1",
+)
+
 git_repository(
     name = "build_bazel_rules_apple",
     remote = "https://github.com/bazelbuild/rules_apple.git",
-    commit = "7ea0557",
+    tag = "0.5.0",
+)
+
+git_repository(
+    name = "bazel_skylib",
+    remote = "https://github.com/bazelbuild/bazel-skylib.git",
+    tag = "0.4.0",
+)
+
+http_file(
+    name = "xctestrunner",
+    executable = 1,
+    url = "https://github.com/google/xctestrunner/releases/download/0.2.3/ios_test_runner.par",
 )
 
 git_repository(
     name = "bazel_ios_warnings",
     remote = "https://github.com/material-foundation/bazel_ios_warnings.git",
-    tag = "v1.0.1",
+    tag = "v2.0.0",
 )

@@ -25,11 +25,11 @@
 @end
 
 @implementation CountryTableViewController {
-  NSArray <NSString *>*_countryCodes;
-  NSMutableArray <UIImage *>* _flagImages;
+  NSArray<NSString *> *_countryCodes;
+  NSMutableArray<UIImage *> *_flagImages;
 
   AVSpeechSynthesizer *_speechSynthesizer;
-  NSMutableArray <NSIndexPath *>*_speakingCellIndexes;
+  NSMutableArray<NSIndexPath *> *_speakingCellIndexes;
 }
 
 - (void)viewDidLoad {

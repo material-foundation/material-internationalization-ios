@@ -1,3 +1,10 @@
+# 1.1.0
+
+* [Add Bidi utilities (#42)](https://github.com/material-foundation/material-internationalization-ios/pull/42) (Ian Gordon)
+* [Add support for relative paths to the Bazel build](https://github.com/material-foundation/material-internationalization-ios/pull/41) (Ian Gordon)
+* [Bazel specific import paths are no longer required.](https://github.com/material-foundation/material-internationalization-ios/pull/38) (dmaclach)
+* [Silence warnings (#37)](https://github.com/material-foundation/material-internationalization-ios/pull/37) (Ian Gordon)
+
 # 1.0.4
 
 * [[Bazel] Fix BUILD file SDK dependencies (#36)](https://github.com/material-components/material-components-ios/commit/298b51d3523a346a404e7e8c8bda14e27ed65226) (Robert Moore)

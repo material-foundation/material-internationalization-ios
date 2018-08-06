@@ -15,6 +15,7 @@
 load("@bazel_ios_warnings//:strict_warnings_objc_library.bzl", "strict_warnings_objc_library")
 load("@build_bazel_rules_apple//apple:swift.bzl", "swift_library")
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test")
+load(":apple_framework_relative_headers.bzl", "apple_framework_relative_headers")
 
 licenses(["notice"])  # Apache 2.0
 
@@ -33,10 +34,17 @@ strict_warnings_objc_library(
         "CoreGraphics",
         "CoreImage",
     ],
-    defines = ["IS_BAZEL_BUILD"],
     enable_modules = 1,
     includes = ["Sources"],
     visibility = ["//visibility:public"],
+)
+
+apple_framework_relative_headers(
+    name = "MDFInternationalizationFrameworkHeaders",
+    hdrs = glob([
+        "Sources/*.h",
+    ]),
+    framework_name = "MDFInternationalization",
 )
 
 objc_library(
@@ -44,7 +52,7 @@ objc_library(
     srcs = glob([
         "Tests/*.m",
     ]),
-    deps = [":MDFInternationalization"],
+    deps = [":MDFInternationalization", ":MDFInternationalizationFrameworkHeaders"],
     visibility = ["//visibility:private"],
 )
 
