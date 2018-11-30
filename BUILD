@@ -37,6 +37,9 @@ strict_warnings_objc_library(
     enable_modules = 1,
     includes = ["Sources"],
     visibility = ["//visibility:public"],
+    deps = [
+        ":MDFInternationalizationFrameworkHeaders",
+    ],
 )
 
 apple_framework_relative_headers(
@@ -52,7 +55,10 @@ objc_library(
     srcs = glob([
         "Tests/*.m",
     ]),
-    deps = [":MDFInternationalization", ":MDFInternationalizationFrameworkHeaders"],
+    deps = [
+        ":MDFInternationalization",
+        ":MDFInternationalizationFrameworkHeaders",
+    ],
     visibility = ["//visibility:private"],
 )
 
