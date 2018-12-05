@@ -21,6 +21,13 @@ licenses(["notice"])  # Apache 2.0
 
 exports_files(["LICENSE"])
 
+DEFAULT_IOS_RUNNER_TARGETS = [
+    "//components/testing/runners:IPHONE_5_IN_8_1",
+    "//components/testing/runners:IPAD_PRO_12_9_IN_9_3",
+    "//components/testing/runners:IPHONE_7_PLUS_IN_10_3",
+    "//components/testing/runners:IPHONE_X_IN_11_0",
+]
+
 strict_warnings_objc_library(
     name = "MDFInternationalization",
     srcs = glob([
@@ -62,12 +69,13 @@ objc_library(
     visibility = ["//visibility:private"],
 )
 
-ios_unit_test(
+ios_unit_test_suite(
     name = "UnitTests",
     deps = [
-      ":UnitTestsLib",
+        ":UnitTestsLib",
     ],
     minimum_os_version = "8.0",
-    timeout = "short",
+    runners = DEFAULT_IOS_RUNNER_TARGETS,
     visibility = ["//visibility:private"],
+    size = "small",
 )
