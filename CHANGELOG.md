@@ -1,3 +1,11 @@
+# 2.0.0
+
+This major release upgrades the bazel dependencies and workspace. This change is breaking for anyone
+using bazel to build this library. In order to use this library with bazel, you will also need to
+upgrade your workspace versions to match the ones now used in this library's `WORKSPACE` file.
+
+* [Update bazel workspace to latest versions. (#49)](https://github.com/material-foundation/material-internationalization-ios/commit/2ff10388f4a61c16a856092cdfba709ddbcdd2eb) (featherless)
+
 # 1.1.1
 
 * [Add MDFInternationalizationFrameworkHeaders as a dependency for bazel. (#47)](https://github.com/material-foundation/material-internationalization-ios/commit/580082c633f1e1146fd0634f02dcf39270c5375a) (featherless)
