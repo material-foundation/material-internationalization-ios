@@ -34,7 +34,7 @@ popd
 
 if [ -n "$KOKORO_BUILD_NUMBER" ]; then
   bazel version
-  use_bazel.sh 0.20
+  use_bazel.sh 0.20.0
   bazel version
 fi
 
