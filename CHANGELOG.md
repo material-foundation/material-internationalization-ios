@@ -1,7 +1,10 @@
-# #develop#
+# 2.0.0
 
- TODO: Enumerate changes.
+This major release upgrades the bazel dependencies and workspace. This change is breaking for anyone
+using bazel to build this library. In order to use this library with bazel, you will also need to
+upgrade your workspace versions to match the ones now used in this library's `WORKSPACE` file.
 
+* [Update bazel workspace to latest versions. (#49)](https://github.com/material-foundation/material-internationalization-ios/commit/2ff10388f4a61c16a856092cdfba709ddbcdd2eb) (featherless)
 
 # 1.1.1
 
