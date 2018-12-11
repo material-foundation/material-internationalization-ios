@@ -48,6 +48,7 @@ apple_framework_relative_headers(
         "Sources/*.h",
     ]),
     framework_name = "MDFInternationalization",
+    visibility = ["//visibility:public"],
 )
 
 objc_library(
