@@ -1,7 +1,11 @@
-# #develop#
+# 2.0.1
 
- TODO: Enumerate changes.
+This patch release fixes framework-style imports when using bazel to build this library as an
+external dependency.
 
+## Non-source changes
+
+* [Add workspace_root to framework import path. (#51)](https://github.com/material-foundation/material-internationalization-ios/commit/25a16214c9ca8ecfbb89f4168f7967c3a0549921) (featherless)
 
 # 2.0.0
 
