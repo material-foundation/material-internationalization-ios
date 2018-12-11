@@ -14,8 +14,12 @@ def _apple_framework_relative_headers_impl(ctx):
     file_actions.symlink(ctx, f, framework_header_file)
     outputs.append(framework_header_file)
 
+  # Documentation of these implicit types can be found here:
+  # ctx: https://docs.bazel.build/versions/master/skylark/lib/ctx.html
+  # ctx.label: https://docs.bazel.build/versions/master/skylark/lib/Label.html
+
   include_dir = "/".join([
-      ctx.configuration.bin_dir.path, ctx.label.package, output_dir])
+      ctx.configuration.bin_dir.path, ctx.label.workspace_root, ctx.label.package, output_dir])
   return [
       apple_common.new_objc_provider(
           header=depset(outputs),
