@@ -15,7 +15,7 @@ def _apple_framework_relative_headers_impl(ctx):
     outputs.append(framework_header_file)
 
   include_dir = "/".join([
-      ctx.configuration.bin_dir.path, ctx.label.package, output_dir])
+      ctx.configuration.bin_dir.path, ctx.label.workspace_root, ctx.label.package, output_dir])
   return [
       apple_common.new_objc_provider(
           header=depset(outputs),
