@@ -12,7 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test")
+load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test_suite")
+load("@build_bazel_rules_apple//apple/testing/default_runner:ios_test_runner.bzl", "ios_test_runner")
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 load("@bazel_ios_warnings//:strict_warnings_objc_library.bzl", "strict_warnings_objc_library")
 load(":apple_framework_relative_headers.bzl", "apple_framework_relative_headers")
@@ -62,12 +63,30 @@ objc_library(
     visibility = ["//visibility:private"],
 )
 
-ios_unit_test(
+ios_test_runner(
+    name = "IPAD_PRO_12_9_IN_9_3",
+    device_type = "iPad Pro (12.9-inch)",
+    os_version = "9.3",
+    visibility = ["//visibility:public"],
+)
+
+ios_test_runner(
+    name = "IPHONE_7_PLUS_IN_10_3",
+    device_type = "iPhone 7 Plus",
+    os_version = "10.3",
+    visibility = ["//visibility:public"],
+)
+
+ios_unit_test_suite(
     name = "UnitTests",
     deps = [
       ":UnitTestsLib",
     ],
     minimum_os_version = "9.0",
     timeout = "short",
+    runners = [
+        ":IPAD_PRO_12_9_IN_9_3",
+        ":IPHONE_7_PLUS_IN_10_3",
+    ],
     visibility = ["//visibility:private"],
 )
