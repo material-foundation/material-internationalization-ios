@@ -85,6 +85,20 @@ ios_test_runner(
     visibility = ["//visibility:public"],
 )
 
+ios_test_runner(
+    name = "IPHONE_X_IN_11_4",
+    device_type = "iPhone X",
+    os_version = "11.4",
+    visibility = ["//visibility:public"],
+)
+
+ios_test_runner(
+    name = "IPHONE_XS_MAX_IN_12_4",
+    device_type = "iPhone XS Max",
+    os_version = "12.4",
+    visibility = ["//visibility:public"],
+)
+
 ios_unit_test_suite(
     name = "UnitTests",
     deps = [
@@ -95,6 +109,8 @@ ios_unit_test_suite(
     runners = [
         ":IPAD_PRO_12_9_IN_9_3",
         ":IPHONE_7_PLUS_IN_10_3",
+        ":IPHONE_X_IN_11_4",
+        ":IPHONE_XS_MAX_IN_12_4",
     ],
     visibility = ["//visibility:private"],
 )
