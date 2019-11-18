@@ -67,7 +67,7 @@ ios_unit_test(
     deps = [
       ":UnitTestsLib",
     ],
-    minimum_os_version = "8.0",
+    minimum_os_version = "9.0",
     timeout = "short",
     visibility = ["//visibility:private"],
 )
