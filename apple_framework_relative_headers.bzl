@@ -1,7 +1,9 @@
 """Bazel rules for supporting framework-relative header imports."""
 
-load("@build_bazel_rules_apple//apple/bundling:file_actions.bzl", "file_actions")
-
+load(
+    "@build_bazel_rules_apple//apple/internal:file_support.bzl",
+    "file_support",
+)
 
 def _apple_framework_relative_headers_impl(ctx):
   """Implementation for apple_framework_relative_headers rule."""
@@ -11,7 +13,7 @@ def _apple_framework_relative_headers_impl(ctx):
   for f in ctx.files.hdrs:
     framework_path =  "/".join([output_dir, ctx.attr.framework_name, f.basename])
     framework_header_file = ctx.actions.declare_file(framework_path)
-    file_actions.symlink(ctx, f, framework_header_file)
+    file_support.symlink(ctx, f, framework_header_file)
     outputs.append(framework_header_file)
 
   # Documentation of these implicit types can be found here:
@@ -36,8 +38,7 @@ apple_framework_relative_headers = rule(
         "framework_name": attr.string(mandatory=True),
         "_realpath": attr.label(
             cfg="host",
-            allow_files=True,
-            single_file=True,
+            allow_single_file=True,
             default=Label("@bazel_tools//tools/objc:realpath"),
         ),
     },
