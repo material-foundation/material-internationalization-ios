@@ -34,7 +34,11 @@ popd
 
 if [ -n "$KOKORO_BUILD_NUMBER" ]; then
   bazel version
-  use_bazel.sh 0.20.0
+  if [ -f "$KOKORO_GFILE_DIR/use_bazel.sh" ]; then
+    bash "$KOKORO_GFILE_DIR/use_bazel.sh" 1.1.0
+  else
+    use_bazel.sh 1.1.0
+  fi
   bazel version
 fi
 
