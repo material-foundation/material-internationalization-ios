@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test_suite")
 load("@build_bazel_rules_apple//apple/testing/default_runner:ios_test_runner.bzl", "ios_test_runner")
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
@@ -49,6 +50,13 @@ apple_framework_relative_headers(
         "Sources/*.h",
     ]),
     framework_name = "MDFInternationalization",
+)
+
+build_test(
+    name = "BuildTest",
+    targets = [
+        ":MDFInternationalization"
+    ],
 )
 
 objc_library(
