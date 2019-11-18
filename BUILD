@@ -94,7 +94,7 @@ ios_test_runner(
 
 ios_test_runner(
     name = "IPHONE_XS_MAX_IN_12_4",
-    device_type = "iPhone XS Max",
+    device_type = "iPhone Xs Max",
     os_version = "12.4",
     visibility = ["//visibility:public"],
 )
