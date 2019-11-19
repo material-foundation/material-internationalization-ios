@@ -19,7 +19,7 @@ git_repository(
     name = "build_bazel_rules_apple",
     remote = "https://github.com/bazelbuild/rules_apple.git",
     commit = "19f031f09185e0fcd722c22e596d09bd6fff7944",  # 0.19.0
-    shallow_since = "10-10-2019",
+    shallow_since = "1570721035 -0700",  # 10-10-2019
 )
 
 load(
@@ -47,5 +47,5 @@ git_repository(
     name = "bazel_ios_warnings",
     remote = "https://github.com/material-foundation/bazel_ios_warnings.git",
     commit = "c3f720c0838af1ee53299aa6efda87cf729146b4",  # v3.0.0
-    shallow_since = "12-21-2018",
+    shallow_since = "1545400728 -0500"  # 12-21-2018
 )
