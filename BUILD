@@ -68,35 +68,30 @@ objc_library(
         ":MDFInternationalization",
         ":MDFInternationalizationFrameworkHeaders",
     ],
-    visibility = ["//visibility:private"],
 )
 
 ios_test_runner(
     name = "IPAD_PRO_12_9_IN_9_3",
     device_type = "iPad Pro (12.9-inch)",
     os_version = "9.3",
-    visibility = ["//visibility:public"],
 )
 
 ios_test_runner(
     name = "IPHONE_7_PLUS_IN_10_3",
     device_type = "iPhone 7 Plus",
     os_version = "10.3",
-    visibility = ["//visibility:public"],
 )
 
 ios_test_runner(
     name = "IPHONE_X_IN_11_4",
     device_type = "iPhone X",
     os_version = "11.4",
-    visibility = ["//visibility:public"],
 )
 
 ios_test_runner(
-    name = "IPHONE_XS_MAX_IN_12_4",
+    name = "IPHONE_XS_MAX_IN_12_2",
     device_type = "iPhone Xs Max",
     os_version = "12.2",
-    visibility = ["//visibility:public"],
 )
 
 ios_unit_test_suite(
@@ -110,7 +105,6 @@ ios_unit_test_suite(
         ":IPAD_PRO_12_9_IN_9_3",
         ":IPHONE_7_PLUS_IN_10_3",
         ":IPHONE_X_IN_11_4",
-        ":IPHONE_XS_MAX_IN_12_4",
+        ":IPHONE_XS_MAX_IN_12_2",
     ],
-    visibility = ["//visibility:private"],
 )
