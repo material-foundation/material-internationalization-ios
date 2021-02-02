@@ -1,4 +1,4 @@
-module MDFTextAccessibility {
+module MDFInternationalization {
   requires objc, objc_arc
   header "MDFInternationalization.h"
 }
