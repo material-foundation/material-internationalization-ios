@@ -16,11 +16,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import <MDFInternationalization/MDFRTL.h>
-#import <MDFInternationalization/NSLocale+MaterialRTL.h>
-#import <MDFInternationalization/NSString+MaterialBidi.h>
-#import <MDFInternationalization/UIImage+MaterialRTL.h>
-#import <MDFInternationalization/UIView+MaterialRTL.h>
+#import "MDFRTL.h"
+#import "NSLocale+MaterialRTL.h"
+#import "NSString+MaterialBidi.h"
+#import "UIImage+MaterialRTL.h"
+#import "UIView+MaterialRTL.h"
 
 //! Project version number for MDFInternationalization.
 FOUNDATION_EXPORT double MDFInternationalizationVersionNumber;
