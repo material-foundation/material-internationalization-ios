@@ -16,7 +16,7 @@
 
 #import "BidirectionalViewController.h"
 
-#import <MDFInternationalization/MDFInternationalization.h>
+#import "MDFInternationalization.h"
 
 
 static NSString *LTREmbedding = @"\u202a";  // left-to-right embedding

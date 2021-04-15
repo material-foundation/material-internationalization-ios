@@ -16,7 +16,7 @@
 
 #import <XCTest/XCTest.h>
 
-#import <MDFInternationalization/MDFInternationalization.h>
+#import "MDFInternationalization.h"
 
 @interface MDFBidiTests : XCTestCase
 

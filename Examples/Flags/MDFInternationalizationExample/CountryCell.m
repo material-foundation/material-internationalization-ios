@@ -16,7 +16,7 @@
 
 #import "CountryCell.h"
 
-#import <MDFInternationalization/MDFInternationalization.h>
+#import "MDFInternationalization.h"
 
 @implementation CountryCell
 
