@@ -16,7 +16,7 @@
 
 #import "InformationViewController.h"
 
-#import <MDFInternationalization/MDFInternationalization.h>
+#import "MDFInternationalization.h"
 
 @interface InformationViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *deviceLabel;

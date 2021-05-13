@@ -1,3 +1,7 @@
+# 3.0.0
+
+This major release drops support for iOS 9 and 10.
+
 # 2.0.1
 
 This patch release fixes framework-style imports when using bazel to build this library as an
