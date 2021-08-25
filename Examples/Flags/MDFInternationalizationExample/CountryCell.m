@@ -28,16 +28,16 @@ static UIImage *sNonspeakingIcon;
   [super awakeFromNib];
 
   // A flag imageview should not be mirrored in Right-to-Left so we force the view to Left-to-Right.
-  self.flagView.mdf_semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
+  self.flagView.semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
 
   // The speech indicator icon can be mirrored, so we keep the default of
   // UISemanticContentAttributeUnspecified.
-  //  self.speechIcon.mdf_semanticContentAttribute = UISemanticContentAttributeUnspecified;
+  //  self.speechIcon.semanticContentAttribute = UISemanticContentAttributeUnspecified;
 
   // Our country name label takes up the middle of our cell, but will automatically align the
   // text based on it's default textAlignment of NSTextAlignmentNatural.  So we leave its
-  // mdf_semanticContentAttribute value as the default UISemanticContentAttributeUnspecified.
-  //  self.nameLabel.mdf_semanticContentAttribute = UISemanticContentAttributeUnspecified;
+  // semanticContentAttribute value as the default UISemanticContentAttributeUnspecified.
+  //  self.nameLabel.semanticContentAttribute = UISemanticContentAttributeUnspecified;
 
   // Mirroring images could take a non-trivial amount of time, so we cache the resulting images.
   static dispatch_once_t onceToken;
