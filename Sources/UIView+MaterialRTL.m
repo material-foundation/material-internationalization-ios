@@ -81,20 +81,6 @@ static inline UIUserInterfaceLayoutDirection
   [self setNeedsLayout];
 }
 
-- (UIUserInterfaceLayoutDirection)mdf_effectiveUserInterfaceLayoutDirection {
-#if MDF_BASE_SDK_EQUAL_OR_ABOVE(10_0)
-  if ([self respondsToSelector:@selector(effectiveUserInterfaceLayoutDirection)]) {
-    return self.effectiveUserInterfaceLayoutDirection;
-  } else {
-    return [UIView mdf_userInterfaceLayoutDirectionForSemanticContentAttribute:
-                       self.mdf_semanticContentAttribute];
-  }
-#else
-  return [UIView mdf_userInterfaceLayoutDirectionForSemanticContentAttribute:
-                     self.mdf_semanticContentAttribute];
-#endif  // MDF_BASE_SDK_EQUAL_OR_ABOVE(10_0)
-}
-
 + (UIUserInterfaceLayoutDirection)mdf_userInterfaceLayoutDirectionForSemanticContentAttribute:
         (UISemanticContentAttribute)attribute {
 #if MDF_BASE_SDK_EQUAL_OR_ABOVE(9_0)

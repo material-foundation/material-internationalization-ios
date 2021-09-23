@@ -44,18 +44,6 @@
 @property(nonatomic, setter=mdf_setSemanticContentAttribute:)
     UISemanticContentAttribute mdf_semanticContentAttribute;
 
-/**
- The user interface layout direction appropriate for arranging the immediate content of this view.
-
- Always consult the mdf_effectiveUserInterfaceLayoutDirection of the view whose immediate content is
- being arranged or drawn. Do not assume that the value propagates through the view's subtree.
-
- @note
-   - iOS 9 and below: same as +[UIView mdf_userInterfaceLayoutDirectionForSemanticContentAttribute:]
-   - iOS 10 and above: same as -[UIView effectiveUserInterfaceLayoutDirection]
- */
-@property(nonatomic, readonly)
-    UIUserInterfaceLayoutDirection mdf_effectiveUserInterfaceLayoutDirection;
 
 /**
  Returns the layout direction implied by the provided semantic content attribute relative to the
