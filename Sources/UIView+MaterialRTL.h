@@ -34,18 +34,6 @@
 #pragma clang diagnostic ignored "-Wpartial-availability"
 
 /**
- A semantic description of the view's contents, used to determine whether the view should be flipped
- when switching between left-to-right and right-to-left layouts.
-
- @note Default:
-   - iOS 8 and below: UISemanticContentAttributeUnspecified.
-   - iOS 9 and above: same as -[UIView semanticContentAttribute]
- */
-@property(nonatomic, setter=mdf_setSemanticContentAttribute:)
-    UISemanticContentAttribute mdf_semanticContentAttribute;
-
-
-/**
  Returns the layout direction implied by the provided semantic content attribute relative to the
  application-wide layout direction (as returned by
  UIApplication.sharedApplication.userInterfaceLayoutDirection). However, if it's being called from
